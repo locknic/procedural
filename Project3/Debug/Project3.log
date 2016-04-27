@@ -1,0 +1,51 @@
+﻿Build started 4/27/2016 4:24:01 PM.
+     1>Project "C:\cygwin64\home\Kyle\CS420\procedural\Project3\Project3.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\VC\bin\CL.exe /c /I"C:\Users\Kyle\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\Users\Kyle\OgreSDK_vc11_v1-9-0/boost/" /I"C:\Users\Kyle\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\Users\Kyle\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\Users\Kyle\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AIManager.cpp Camera.cpp InputHandler.cpp main.cpp MainListener.cpp Project3.cpp World.cpp
+         World.cpp
+         Project3.cpp
+         MainListener.cpp
+         main.cpp
+         InputHandler.cpp
+         Camera.cpp
+         AIManager.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin64\home\Kyle\CS420\procedural\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Kyle\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\Users\Kyle\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\cygwin64\home\Kyle\CS420\procedural\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\cygwin64\home\Kyle\CS420\procedural\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
+         Debug\Camera.obj
+         Debug\InputHandler.obj
+         Debug\main.obj
+         Debug\MainListener.obj
+         Debug\Project3.obj
+         Debug\World.obj
+         Project3.vcxproj -> C:\cygwin64\home\Kyle\CS420\procedural\Debug\Project3.exe
+       PostBuildEvent:
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\OgreMain_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\OgreOverlay_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\OIS_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D9_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D11_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_GL_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeZone_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeSceneManager_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy "C:\Users\Kyle\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_PCZSceneManager_d.dll" "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         
+         copy plugins_d.cfg "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         copy resources_d.cfg "C:\cygwin64\home\Kyle\CS420\procedural\Debug\"
+         :VCEnd
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+     1>Done Building Project "C:\cygwin64\home\Kyle\CS420\procedural\Project3\Project3.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:17.89
