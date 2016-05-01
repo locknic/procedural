@@ -15,15 +15,22 @@ class GhostCamera
 
 public:
     GhostCamera(Ogre::Camera *renderCamera, World *world); 
+
     void Think(float time);
-    // If you have a different cameras, you'll want some acessor methods here.
+	void setOrientationFromGhostOrientation(Ogre::Quaternion GhostOrientation);
+    void setPositionFromGhostPosition(Ogre::Quaternion GhostOrientiation, Ogre::Vector3 GhostPosition);
+	void setOrientation(Ogre::Quaternion orientation);
+	void setPosition(Ogre::Vector3 position);
+	void yaw(Ogre::Degree degree);
+	void lookAt(Ogre::Vector3 point);
+
+	// If you have a different cameras, you'll want some acessor methods here.
     //  If your camera always stays still, you could remove this class entirely
 
 protected:
 
     Ogre::Camera *mRenderCamera; 
     World *mWorld;
-
 };
 
 #endif

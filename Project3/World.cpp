@@ -22,6 +22,8 @@
 World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneManager(sceneManager), mInputHandler(input)
 {
 
+	mSceneManager->setAmbientLight(Ogre::ColourValue(1,1,1));
+
 	// Yeah, this should be done automatically for all fonts referenced in an overlay file.
 	//  But there is a bug in the OGRE code so we need to do it manually.
 	Ogre::ResourceManager::ResourceMapIterator iter = Ogre::FontManager::getSingleton().getResourceIterator();
@@ -31,6 +33,28 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	}
 
 
+	Ogre::Entity *NorthWall = SceneManager()->createEntity("NorthWall.mesh");
+	Ogre::Entity *EastWall = SceneManager()->createEntity("EastWall.mesh");
+	Ogre::Entity *SouthWall = SceneManager()->createEntity("SouthWall.mesh");
+	Ogre::Entity *WestWall = SceneManager()->createEntity("WestWall.mesh");
+
+	Ogre::SceneNode *nWall = SceneManager()->getRootSceneNode()->createChildSceneNode();
+	nWall->attachObject(NorthWall);
+	nWall->setPosition(0,0,0);
+	nWall->scale(1,1,1);
+
+	Ogre::SceneNode *eWall = SceneManager()->getRootSceneNode()->createChildSceneNode();
+	eWall->attachObject(EastWall);
+	eWall->setPosition(0,0,0);
+	eWall->scale(1,1,1);
+
+	Ogre::SceneNode *sWall = SceneManager()->getRootSceneNode()->createChildSceneNode();
+	sWall->attachObject(SouthWall);
+	sWall->setPosition(0,0,0);
+
+	Ogre::SceneNode *wWall = SceneManager()->getRootSceneNode()->createChildSceneNode();
+	wWall->attachObject(WestWall);
+	wWall->setPosition(0,0,0);
 
 	// Now we will show the sample overlay.  Look in the file Content/Overlays/Example to
 	// see how this overlay is defined
@@ -42,7 +66,13 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 void 
 World::Think(float time)
 {
-	
+	mCamera->setPosition(Ogre::Vector3(0, 0, 0));
+	mCamera->lookAt(Ogre::Vector3(1.0, 0, 500));
+
+	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
+	{
+		mCamera->yaw(Ogre::Degree(3 * time));
+	}
 }
 
 
