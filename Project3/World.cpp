@@ -30,6 +30,8 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 		iter.getNext()->load(); 
 	}
 
+
+
 	// Now we will show the sample overlay.  Look in the file Content/Overlays/Example to
 	// see how this overlay is defined
 	Ogre::OverlayManager& om = Ogre::OverlayManager::getSingleton();
