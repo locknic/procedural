@@ -66,7 +66,7 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 void 
 World::Think(float time)
 {
-	mCamera->setPosition(Ogre::Vector3(0, 0, 0));
+	mCamera->setPosition(Ogre::Vector3(0, 0, -5));
 	mCamera->lookAt(Ogre::Vector3(1.0, 0, 500));
 
 	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
