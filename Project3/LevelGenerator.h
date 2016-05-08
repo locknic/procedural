@@ -1,36 +1,46 @@
 #ifndef __LevelGenerator_h_
 #define __LevelGenerator_h_
 
+#include <vector>
+
 namespace Ogre
 {
 	class SceneManager;
 }
 
 class World;
+class Monster;
 
 class LevelGenerator
 {
 public:
 	LevelGenerator(World *world, Ogre::SceneManager *sceneManager);
-	
+	void generateLevel(int rows, int columns, int roomWidth, int monsters);
+	void Think(float time);
+
 private:
 	void generateBranches(int currentRow, int currentColumn);
 	void generateRoom(int currentRow, int currentColumn);
+	void generateMonsters();
 	void generateModels();
 	int findArrayPosition(int currentRow, int currentColumn);
-	bool getArrayVaueAt(int currentRow, int currentColumn);
-	void LevelGenerator::setArrayVaueAt(bool value, int currentRow, int currentColumn);
+	bool getArrayValueAt(bool *arr, int currentRow, int currentColumn);
+	void LevelGenerator::setArrayValueAt(bool *arr, bool value, int currentRow, int currentColumn);
 
 	World *mWorld;
 	Ogre::SceneManager *mSceneManager;
 
-	// ROWS AND COLUMNS SHOULD BE ODD NUMBER
-	static const int ROWS = 9;
-	static const int COLUMNS = 9;
-	static const int ROOM_WIDTH = 10;
+	// mRows AND mColumns SHOULD BE ODD NUMBER
+	int mRows;
+	int mColumns;
+	int mRoomWidth;
+	int mMonsterNumbers;
 
 	bool *mRooms;
+	bool *mNodes;
+	bool *mMonsters;
 
+	std::vector<Monster*> *mMonsterArray;
 };
 
 #endif

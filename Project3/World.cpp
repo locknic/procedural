@@ -47,6 +47,8 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
     spot->setSpotlightRange(Ogre::Degree(5),Ogre::Degree(15),0.5f);
 	spot->setCastShadows(false);
 
+	mLevelGenerator = new LevelGenerator(this, mSceneManager);
+
 	restartGame();
 
 	mMainMenu = new MainMenu(this, mInputHandler);
@@ -62,7 +64,8 @@ World::Think(float time)
 
 	if (!mMainMenu->getInMenu())
 	{
-	
+		mLevelGenerator->Think(time);
+
 		if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
 		{
 			flashLight->yaw(Ogre::Radian(-time * 1));
@@ -91,7 +94,7 @@ void World::restartGame()
 {
 	mSceneManager->getRootSceneNode()->removeAndDestroyAllChildren();
 
-	new LevelGenerator(this, mSceneManager);
+	mLevelGenerator->generateLevel(9,9,10,1);
 
 	flashLight = SceneManager()->getRootSceneNode()->createChildSceneNode();
 	flashLight->setPosition(0,1,0);

@@ -115,6 +115,7 @@ copy resources.cfg "$(OutDir)"</Command>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="LevelGenerator.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="InputHandler.h" />
@@ -130,6 +131,7 @@ copy resources.cfg "$(OutDir)"</Command>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainListener.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Project3.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Wall.cpp" />

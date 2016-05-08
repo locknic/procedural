@@ -15,6 +15,7 @@ class InputHandler;
 class MainMenu;
 class Wall;
 class Room;
+class LevelGenerator;
 
 class World
 {
@@ -41,6 +42,7 @@ protected:
 	InputHandler *mInputHandler;
 	GhostCamera *mCamera;
 	MainMenu *mMainMenu;
+	LevelGenerator *mLevelGenerator;
 
 private:
 	
