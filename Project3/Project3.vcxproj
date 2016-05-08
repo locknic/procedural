@@ -113,6 +113,7 @@ copy resources.cfg "$(OutDir)"</Command>
   <ItemGroup>
     <ClInclude Include="AIManager.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="LevelGenerator.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Wall.h" />
@@ -125,6 +126,7 @@ copy resources.cfg "$(OutDir)"</Command>
     <ClCompile Include="AIManager.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="LevelGenerator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainListener.cpp" />
     <ClCompile Include="MainMenu.cpp" />

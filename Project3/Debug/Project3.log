@@ -1,12 +1,14 @@
-﻿Build started 08/05/2016 04:01:10.
+﻿Build started 08/05/2016 07:49:05.
      1>Project "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MainMenu.cpp
-         MainMenu.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt LevelGenerator.cpp
+         LevelGenerator.cpp
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\levelgenerator.cpp(131): warning C4244: 'argument' : conversion from 'const int' to 'const Ogre::Real', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
          Debug\Camera.obj
          Debug\InputHandler.obj
+         Debug\LevelGenerator.obj
          Debug\main.obj
          Debug\MainListener.obj
          Debug\MainMenu.obj
@@ -14,7 +16,6 @@
          Debug\Room.obj
          Debug\Wall.obj
          Debug\World.obj
-         LINK : C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.exe not found or not built by the last incremental link; performing full link
          Project3.vcxproj -> C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.exe
        PostBuildEvent:
          copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\OgreMain_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
@@ -45,4 +46,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:12.16
+Time Elapsed 00:00:07.84

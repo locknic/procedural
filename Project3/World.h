@@ -31,8 +31,8 @@ public:
 	Ogre::SceneManager *SceneManager() { return mSceneManager; }
 	Ogre::SceneNode *flashLight;
 
-	Room *room1;
-	Room *room2;
+//	Room *room1;
+//	Room *room2;
 
 protected:
 

@@ -21,11 +21,12 @@
 #include "Room.h"
 #include "InputHandler.h"
 #include "MainMenu.h"
+#include "LevelGenerator.h"
 
 World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneManager(sceneManager), mInputHandler(input)
 {
 
-	mSceneManager->setAmbientLight(Ogre::ColourValue(0.001,0.001,0.001));
+	mSceneManager->setAmbientLight(Ogre::ColourValue(0.1, 0.1, 0.1));
     mSceneManager->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
 
 
@@ -48,8 +49,10 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 		iter.getNext()->load(); 
 	}
 	
-	room1 = new Room(mSceneManager, Ogre::Vector4(0,1,1,1), Ogre::Vector3(0,0,0));
-	room2 = new Room(mSceneManager, Ogre::Vector4(1,1,0,1), Ogre::Vector3(0,0,10));
+	//room1 = new Room(mSceneManager, Ogre::Vector4(0,1,1,1), Ogre::Vector3(0,0,0));
+	//room2 = new Room(mSceneManager, Ogre::Vector4(1,1,0,1), Ogre::Vector3(0,0,10));
+
+	LevelGenerator* levelGen = new LevelGenerator(this, mSceneManager);
 
 	flashLight = SceneManager()->getRootSceneNode()->createChildSceneNode();
 	flashLight->setPosition(0,1,0);
