@@ -32,12 +32,12 @@ bool
 
 	// Call think methods on any other managers / etc you want to add
 
-	bool keepGoing = true;
+	bool keepGoing = mWorld->getKeepGoing();
 
 	// Ogre will shut down if a listener returns false.  We will shut everything down if
 	// either the user presses escape or the main render window is closed.  Feel free to 
 	// modify this as you like.
-	if (mInputHandler->IsKeyDown(OIS::KC_ESCAPE) || mRenderWindow->isClosed())
+	if (mRenderWindow->isClosed())
 	{
 		keepGoing = false;
 	}

@@ -20,6 +20,7 @@
 #include "Wall.h"
 #include "Room.h"
 #include "InputHandler.h"
+#include "MainMenu.h"
 
 World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneManager(sceneManager), mInputHandler(input)
 {
@@ -54,42 +55,49 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	flashLight->setPosition(0,1,0);
 	flashLight->attachObject(spot);
 
-	// Now we will show the sample overlay.  Look in the file Content/Overlays/Example to
-	// see how this overlay is defined
-	Ogre::OverlayManager& om = Ogre::OverlayManager::getSingleton();
-	Ogre::Overlay *overly = om.getByName("Sample");
-	overly->show();
+	mMainMenu = new MainMenu(this, mInputHandler);
+	mMainMenu->displayMenu();
+
+	keepGoing = true;
 }
 
 void 
 World::Think(float time)
 {
-	mCamera->setPosition(Ogre::Vector3(0, 0, -5));
-	mCamera->lookAt(Ogre::Vector3(1.0, 0, 500));
+	mMainMenu->Think(time);
+
+	if (!mMainMenu->getInMenu())
+	{
+		mCamera->setPosition(Ogre::Vector3(0, 0, -5));
+		mCamera->lookAt(Ogre::Vector3(1.0, 0, 500));
 
 	
-	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
-	{
-		flashLight->yaw(Ogre::Radian(-time * 1));
+		if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
+		{
+			flashLight->yaw(Ogre::Radian(-time * 1));
 
-	}
+		}
 
-	if (mInputHandler->IsKeyDown(OIS::KC_LEFT))
-	{
-		flashLight->yaw(Ogre::Radian(time * 1));
-	}
+		if (mInputHandler->IsKeyDown(OIS::KC_LEFT))
+		{
+			flashLight->yaw(Ogre::Radian(time * 1));
+		}
 
-	if (mInputHandler->IsKeyDown(OIS::KC_UP))
-	{
-		flashLight->translate(0,0,-time * 5, Ogre::Node::TS_LOCAL);
-	}
-	if (mInputHandler->IsKeyDown(OIS::KC_DOWN))
-	{
-		flashLight->translate(0,0,time * 5, Ogre::Node::TS_LOCAL);
-	}
+		if (mInputHandler->IsKeyDown(OIS::KC_UP))
+		{
+			flashLight->translate(0,0,-time * 5, Ogre::Node::TS_LOCAL);
+		}
+		if (mInputHandler->IsKeyDown(OIS::KC_DOWN))
+		{
+			flashLight->translate(0,0,time * 5, Ogre::Node::TS_LOCAL);
+		}
 
-	mCamera->setPositionFromGhostPosition(flashLight->getOrientation(), flashLight->getPosition());
-	mCamera->setOrientationFromGhostOrientation(flashLight->getOrientation());
+		mCamera->setPositionFromGhostPosition(flashLight->getOrientation(), flashLight->getPosition());
+		mCamera->setOrientationFromGhostOrientation(flashLight->getOrientation());
+	}
 }
 
+void World::restartGame()
+{
 
+}
