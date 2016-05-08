@@ -27,9 +27,8 @@ bool
     //   a value, is for the escape key to cause our application to end.
     //   Feel free to change this to something that makes more sense to you.
 	mInputHandler->Think(time);
-	mWorld->Think(time);
     mGhostCamera->Think(time);
-
+	mWorld->Think(time);
 	// Call think methods on any other managers / etc you want to add
 
 	bool keepGoing = mWorld->getKeepGoing();

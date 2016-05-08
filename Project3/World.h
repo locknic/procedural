@@ -6,6 +6,7 @@ namespace Ogre {
     class SceneNode;
     class SceneManager;
 	class Entity;
+	class Light;
 }
 
 // Forward delcarations of our own classes
@@ -27,12 +28,10 @@ public:
 	bool getKeepGoing() { return keepGoing; }
 	void restartGame();
 	void exitGame(){ keepGoing = false; }
+	GhostCamera* getCamera() { return mCamera; }
 
 	Ogre::SceneManager *SceneManager() { return mSceneManager; }
 	Ogre::SceneNode *flashLight;
-
-//	Room *room1;
-//	Room *room2;
 
 protected:
 
@@ -43,13 +42,11 @@ protected:
 	GhostCamera *mCamera;
 	MainMenu *mMainMenu;
 
-	// Here is where you keep all your world data.
-	//  You probably want to use containers (arrays / lists / classes / etc) to ogranize them, 
-	//    instead of a whole list of variables.  
-
 private:
 	
 	bool keepGoing;
+
+	Ogre::Light *spot;
 
 };
 

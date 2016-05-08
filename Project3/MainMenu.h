@@ -28,6 +28,9 @@ private:
 
 	bool inMenu;
 	bool released;
+	bool transitionIn;
+	bool transitionOut;
+	double cameraY;
 
 	int optionSelected;
 

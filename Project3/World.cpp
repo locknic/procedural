@@ -29,9 +29,15 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	mSceneManager->setAmbientLight(Ogre::ColourValue(0.1, 0.1, 0.1));
     mSceneManager->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
 
+	// Yeah, this should be done automatically for all fonts referenced in an overlay file.
+	//  But there is a bug in the OGRE code so we need to do it manually.
+	Ogre::ResourceManager::ResourceMapIterator iter = Ogre::FontManager::getSingleton().getResourceIterator();
+	while (iter.hasMoreElements()) 
+	{ 
+		iter.getNext()->load(); 
+	}
 
-	
-	Ogre::Light *spot = mSceneManager->createLight("Flashlight");
+	spot = mSceneManager->createLight("Flashlight");
     spot->setType(Ogre::Light::LT_SPOTLIGHT);
     spot->setDiffuseColour(1.0, 1.0, 1.0);
 	spot->setSpecularColour(1.0, 1.0, 1.0);
@@ -41,22 +47,7 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
     spot->setSpotlightRange(Ogre::Degree(5),Ogre::Degree(15),0.5f);
 	spot->setCastShadows(false);
 
-	// Yeah, this should be done automatically for all fonts referenced in an overlay file.
-	//  But there is a bug in the OGRE code so we need to do it manually.
-	Ogre::ResourceManager::ResourceMapIterator iter = Ogre::FontManager::getSingleton().getResourceIterator();
-	while (iter.hasMoreElements()) 
-	{ 
-		iter.getNext()->load(); 
-	}
-	
-	//room1 = new Room(mSceneManager, Ogre::Vector4(0,1,1,1), Ogre::Vector3(0,0,0));
-	//room2 = new Room(mSceneManager, Ogre::Vector4(1,1,0,1), Ogre::Vector3(0,0,10));
-
-	LevelGenerator* levelGen = new LevelGenerator(this, mSceneManager);
-
-	flashLight = SceneManager()->getRootSceneNode()->createChildSceneNode();
-	flashLight->setPosition(0,1,0);
-	flashLight->attachObject(spot);
+	restartGame();
 
 	mMainMenu = new MainMenu(this, mInputHandler);
 	mMainMenu->displayMenu();
@@ -71,14 +62,10 @@ World::Think(float time)
 
 	if (!mMainMenu->getInMenu())
 	{
-		mCamera->setPosition(Ogre::Vector3(0, 0, -5));
-		mCamera->lookAt(Ogre::Vector3(1.0, 0, 500));
-
 	
 		if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
 		{
 			flashLight->yaw(Ogre::Radian(-time * 1));
-
 		}
 
 		if (mInputHandler->IsKeyDown(OIS::KC_LEFT))
@@ -102,5 +89,12 @@ World::Think(float time)
 
 void World::restartGame()
 {
+	mSceneManager->getRootSceneNode()->removeAndDestroyAllChildren();
+
+	new LevelGenerator(this, mSceneManager);
+
+	flashLight = SceneManager()->getRootSceneNode()->createChildSceneNode();
+	flashLight->setPosition(0,1,0);
+	flashLight->attachObject(spot);
 
 }
