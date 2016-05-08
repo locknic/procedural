@@ -22,15 +22,15 @@ GhostCamera::setOrientationFromGhostOrientation(Ogre::Quaternion GhostOrientatio
 {
 	mRenderCamera->setOrientation(GhostOrientation * Ogre::Matrix3(
 		1,0,0,
-		0,Ogre::Math::Cos(Ogre::Degree(-15)),Ogre::Math::Sin(Ogre::Degree(-15) * -1),
-		0,Ogre::Math::Sin(Ogre::Degree(-15)),Ogre::Math::Cos(Ogre::Degree(-15)))); 
+		0,Ogre::Math::Cos(Ogre::Degree(0)),Ogre::Math::Sin(Ogre::Degree(0) * -1),
+		0,Ogre::Math::Sin(Ogre::Degree(0)),Ogre::Math::Cos(Ogre::Degree(0)))); 
 	// -15 degrees recommended
 }
 
 void 
 GhostCamera::setPositionFromGhostPosition(Ogre::Quaternion GhostOrientation, Ogre::Vector3 GhostPosition)
 {
-	mRenderCamera->setPosition(GhostOrientation * Ogre::Vector3(0, 20, 45) + GhostPosition);
+	mRenderCamera->setPosition(GhostOrientation * Ogre::Vector3(0, 0, 5) + GhostPosition);
 	// 0 15 35 is key
 	
 }

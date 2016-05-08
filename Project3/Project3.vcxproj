@@ -113,6 +113,8 @@ copy resources.cfg "$(OutDir)"</Command>
   <ItemGroup>
     <ClInclude Include="AIManager.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MainListener.h" />
     <ClInclude Include="Project3.h" />
@@ -125,6 +127,8 @@ copy resources.cfg "$(OutDir)"</Command>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainListener.cpp" />
     <ClCompile Include="Project3.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

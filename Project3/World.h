@@ -11,7 +11,8 @@ namespace Ogre {
 // Forward delcarations of our own classes
 class GhostCamera;
 class InputHandler;
-
+class Wall;
+class Room;
 
 class World
 {
@@ -24,7 +25,10 @@ public:
 	void addCamera(GhostCamera *c) { mCamera = c; }
 
 	Ogre::SceneManager *SceneManager() { return mSceneManager; }
+	Ogre::SceneNode *flashLight;
 
+	Room *room1;
+	Room *room2;
 
 protected:
 
