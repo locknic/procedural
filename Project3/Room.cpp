@@ -20,4 +20,10 @@ Room::Room(Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 
 	eWall = new Wall(mSceneManager, doors.y, position, Ogre::Radian(Ogre::Math::PI/2));
 	sWall = new Wall(mSceneManager, doors.z, position, Ogre::Radian(Ogre::Math::PI));
 	wWall = new Wall(mSceneManager, doors.w, position, Ogre::Radian(Ogre::Math::PI/-2));
+
+	floorEnt = mSceneManager->createEntity("Floor.mesh");
+	floor = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	floor->attachObject(floorEnt);
+	floor->scale(5,5,5);
+	floor->setPosition(position);
 }

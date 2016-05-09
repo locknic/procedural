@@ -37,15 +37,19 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 		iter.getNext()->load(); 
 	}
 
+	
 	spot = mSceneManager->createLight("Flashlight");
     spot->setType(Ogre::Light::LT_SPOTLIGHT);
     spot->setDiffuseColour(1.0, 1.0, 1.0);
 	spot->setSpecularColour(1.0, 1.0, 1.0);
-	spot->setPosition(0, .1, 10);
-	spot->setAttenuation(3250.0,1.0,0.0014,0.000007);
+	spot->setPosition(0, .1, 5);
+	//spot->setAttenuation(3250.0,1.0,0.0014,0.000007);
+	spot->setAttenuation(15.0,1.0,0.15,0.0075);
 	spot->setDirection((Ogre::Vector3(0.0, 0.0, 0.0) - Ogre::Vector3(0.0, 0.0, 100.0)).normalisedCopy());
-    spot->setSpotlightRange(Ogre::Degree(5),Ogre::Degree(15),0.5f);
-	spot->setCastShadows(false);
+    spot->setSpotlightRange(Ogre::Degree(12),Ogre::Degree(45),0.7f);
+	//spot->setCastShadows(false);
+	
+
 
 	mLevelGenerator = new LevelGenerator(this, mSceneManager);
 
