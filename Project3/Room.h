@@ -18,6 +18,8 @@ class Room
 public:
     Room(Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position);
 
+	Ogre::Entity *floorEnt;
+	Ogre::SceneNode *floor;
 	Wall *nWall;
 	Wall *eWall;
 	Wall *wWall;

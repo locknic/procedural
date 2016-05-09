@@ -64,18 +64,7 @@ void LevelGenerator::generateRoom(int currentRow, int currentColumn)
 
 void LevelGenerator::generateModels()
 {
-	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
-	Ogre::MeshManager::getSingleton().createPlane(
- "ground",
-  Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
-  plane, 
-  1500, 1500, 20, 20, 
-  true, 
-  1, 5, 5, 
-  Ogre::Vector3::UNIT_Z);
-	Ogre::Entity* groundEntity = mSceneManager->createEntity("ground");
-	mSceneManager->getRootSceneNode()->createChildSceneNode()->attachObject(groundEntity);
-	groundEntity->setMaterialName("SouthWall");
+
 
 	Ogre::Plane plane2(Ogre::Vector3::NEGATIVE_UNIT_Y, 0);
 	Ogre::MeshManager::getSingleton().createPlane(
