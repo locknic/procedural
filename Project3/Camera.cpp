@@ -58,3 +58,9 @@ GhostCamera::lookAt(Ogre::Vector3 point)
 {
 	mRenderCamera->lookAt(point);
 }
+
+Ogre::Vector3
+GhostCamera::getPosition()
+{
+	return mRenderCamera->getPosition();
+}

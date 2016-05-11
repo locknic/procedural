@@ -13,6 +13,7 @@
 #include "World.h"
 #include "Room.h"
 #include "Monster.h"
+#include "Camera.h"
 
 LevelGenerator::LevelGenerator(World *world, Ogre::SceneManager *sceneManager) : mWorld(world), mSceneManager(sceneManager)
 {
@@ -27,7 +28,7 @@ void LevelGenerator::Think(float time)
 	{
 		for(std::vector<Monster*>::iterator it = mMonsterArray->begin(); it != mMonsterArray->end(); ++it) 
 		{
-			(*it)->Think(time, mWorld->flashLight->getPosition());
+			(*it)->Think(time, mWorld->mCamera->getPosition());
 		}
 	}
 }

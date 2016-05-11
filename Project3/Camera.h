@@ -20,6 +20,7 @@ public:
 	void setOrientationFromGhostOrientation(Ogre::Quaternion GhostOrientation);
     void setPositionFromGhostPosition(Ogre::Quaternion GhostOrientiation, Ogre::Vector3 GhostPosition);
 	void setOrientation(Ogre::Quaternion orientation);
+	Ogre::Vector3 getPosition();
 	void setPosition(Ogre::Vector3 position);
 	void yaw(Ogre::Degree degree);
 	void lookAt(Ogre::Vector3 point);

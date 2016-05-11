@@ -34,7 +34,7 @@ public:
 	Ogre::SceneManager *SceneManager() { return mSceneManager; }
 	Ogre::SceneNode *flashLight;
 
-protected:
+public:
 
 
 	Ogre::SceneManager *mSceneManager;

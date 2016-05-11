@@ -25,14 +25,11 @@ void
 {
 
 	Ogre::Vector3 o =  pos - mMonster->getPosition();
-	//Ogre::Quaternion q = ori - mMonster->getOrientation(); 
-
 	mMonster->translate(
             (o.x * 1 * time),
             (0),
-            (o.z * 1 * time),
+            (o.z  * 1 * time),
            Ogre::Node::TS_WORLD);
-	
 	mMonster->lookAt(Ogre::Vector3(pos.x,mMonster->getPosition().y,pos.z), Ogre::Node::TS_WORLD, Ogre::Vector3::NEGATIVE_UNIT_Z);
 }
 

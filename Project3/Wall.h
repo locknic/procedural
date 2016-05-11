@@ -31,7 +31,7 @@ public:
 	Ogre::SceneNode *noDoor;
 	Ogre::SceneNode *door;
 
-protected:
+public:
 	Ogre::SceneManager *mSceneManager;
 	World *mWorld;
 };
