@@ -270,3 +270,4 @@ void OBB::resetAABBandPoints()
    }
    mGlobalPointsDirty = false;
 }
+
