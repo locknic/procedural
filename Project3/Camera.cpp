@@ -5,7 +5,7 @@
 
 GhostCamera::GhostCamera(Ogre::Camera *renderCamera, World *world) : mRenderCamera(renderCamera), mWorld(world)
 {
-	mRenderCamera->setNearClipDistance(2);
+	mRenderCamera->setNearClipDistance(0.1);
 }
 
 void
@@ -20,17 +20,19 @@ GhostCamera::Think(float time)
 void
 GhostCamera::setOrientationFromGhostOrientation(Ogre::Quaternion GhostOrientation)
 {
-	mRenderCamera->setOrientation(GhostOrientation * Ogre::Matrix3(
+
+	mRenderCamera->setOrientation(GhostOrientation);
+	/*mRenderCamera->setOrientation(GhostOrientation * Ogre::Matrix3(
 		1,0,0,
 		0,Ogre::Math::Cos(Ogre::Degree(0)),Ogre::Math::Sin(Ogre::Degree(0) * -1),
-		0,Ogre::Math::Sin(Ogre::Degree(0)),Ogre::Math::Cos(Ogre::Degree(0)))); 
+		0,Ogre::Math::Sin(Ogre::Degree(0)),Ogre::Math::Cos(Ogre::Degree(0)))); */
 	// -15 degrees recommended
 }
 
 void 
 GhostCamera::setPositionFromGhostPosition(Ogre::Quaternion GhostOrientation, Ogre::Vector3 GhostPosition)
 {
-	mRenderCamera->setPosition(GhostOrientation * Ogre::Vector3(0, 0, 5) + GhostPosition);
+	mRenderCamera->setPosition(GhostOrientation * Ogre::Vector3(0, 0, 0) + GhostPosition);
 	// 0 15 35 is key
 	
 }

@@ -117,6 +117,7 @@ copy resources.cfg "$(OutDir)"</Command>
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="OBB.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="InputHandler.h" />
@@ -134,6 +135,7 @@ copy resources.cfg "$(OutDir)"</Command>
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="OBB.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Project3.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Wall.cpp" />

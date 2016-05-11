@@ -20,6 +20,8 @@ public:
 
 	bool IsKeyDown(OIS::KeyCode key);
 	bool WasKeyDown(OIS::KeyCode key);
+	OIS::Mouse *mMouse;
+
 
 protected:
 	OIS::InputManager* mInputManager;

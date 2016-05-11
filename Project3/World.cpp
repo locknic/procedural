@@ -22,6 +22,8 @@
 #include "InputHandler.h"
 #include "MainMenu.h"
 #include "LevelGenerator.h"
+#include "Player.h"
+
 
 World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneManager(sceneManager), mInputHandler(input)
 {
@@ -46,19 +48,20 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	//spot->setAttenuation(3250.0,1.0,0.0014,0.000007);
 	spot->setAttenuation(15.0,1.0,0.15,0.0075);
 	spot->setDirection((Ogre::Vector3(0.0, 0.0, 0.0) - Ogre::Vector3(0.0, 0.0, 100.0)).normalisedCopy());
-    spot->setSpotlightRange(Ogre::Degree(12),Ogre::Degree(45),0.7f);
+    spot->setSpotlightRange(Ogre::Degree(5),Ogre::Degree(20),0.7f);
 	//spot->setCastShadows(false);
 	
 
 
 	mLevelGenerator = new LevelGenerator(this, mSceneManager);
-
+	tank = new Player(this);
 	restartGame();
 
 	mMainMenu = new MainMenu(this, mInputHandler);
 	mMainMenu->displayMenu();
 
 	keepGoing = true;
+	
 }
 
 void 
@@ -70,27 +73,30 @@ World::Think(float time)
 	{
 		mLevelGenerator->Think(time);
 
-		if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
-		{
-			flashLight->yaw(Ogre::Radian(-time * 1));
-		}
+		//if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
+		//{
+		//	//flashLight->yaw(Ogre::Radian(-time * 1));
+		//	flashLight->translate(-time * 5, 0, 0, Ogre::Node::TS_LOCAL);
+		//}
 
-		if (mInputHandler->IsKeyDown(OIS::KC_LEFT))
-		{
-			flashLight->yaw(Ogre::Radian(time * 1));
-		}
+		//if (mInputHandler->IsKeyDown(OIS::KC_LEFT))
+		//{
+		//	//flashLight->yaw(Ogre::Radian(time * 1));
+		//	flashLight->translate(time * 5, 0, 0, Ogre::Node::TS_LOCAL);
+		//}
 
-		if (mInputHandler->IsKeyDown(OIS::KC_UP))
-		{
-			flashLight->translate(0,0,-time * 5, Ogre::Node::TS_LOCAL);
-		}
-		if (mInputHandler->IsKeyDown(OIS::KC_DOWN))
-		{
-			flashLight->translate(0,0,time * 5, Ogre::Node::TS_LOCAL);
-		}
+		//if (mInputHandler->IsKeyDown(OIS::KC_UP))
+		//{
+		//	flashLight->translate(0,0,-time * 5, Ogre::Node::TS_LOCAL);
+		//}
+		//if (mInputHandler->IsKeyDown(OIS::KC_DOWN))
+		//{
+		//	flashLight->translate(0,0,time * 5, Ogre::Node::TS_LOCAL);
+		//}
+		tank->Think(time, mInputHandler);
 
-		mCamera->setPositionFromGhostPosition(flashLight->getOrientation(), flashLight->getPosition());
-		mCamera->setOrientationFromGhostOrientation(flashLight->getOrientation());
+		mCamera->setPositionFromGhostPosition(tank->mTank->getOrientation(), tank->mTank->getPosition());
+		mCamera->setOrientationFromGhostOrientation(tank->mTank->getOrientation());
 	}
 }
 
@@ -100,8 +106,9 @@ void World::restartGame()
 
 	mLevelGenerator->generateLevel(9,9,10,1);
 
-	flashLight = SceneManager()->getRootSceneNode()->createChildSceneNode();
-	flashLight->setPosition(0,1,0);
-	flashLight->attachObject(spot);
+	//tank->mTank = SceneManager()->getRootSceneNode()->createChildSceneNode();
+	tank->restart();
+	tank->mTank->setPosition(0,1,0);
+	tank->mTank->attachObject(spot);
 
 }

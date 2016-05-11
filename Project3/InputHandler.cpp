@@ -19,6 +19,7 @@ InputHandler::InputHandler(Ogre::RenderWindow *renderWindow) :
 	mInputManager = OIS::InputManager::createInputSystem( pl );
 
 	mCurrentKeyboard = static_cast<OIS::Keyboard*>(mInputManager->createInputObject( OIS::OISKeyboard, false /* not buffered */ ));
+	mMouse = static_cast<OIS::Mouse*>(mInputManager->createInputObject(OIS::OISMouse, true));
 }
 
 

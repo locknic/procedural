@@ -16,6 +16,7 @@ class MainMenu;
 class Wall;
 class Room;
 class LevelGenerator;
+class Player;
 
 class World
 {
@@ -33,6 +34,8 @@ public:
 
 	Ogre::SceneManager *SceneManager() { return mSceneManager; }
 	Ogre::SceneNode *flashLight;
+	Player *tank;
+
 
 public:
 
