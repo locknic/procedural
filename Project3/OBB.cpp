@@ -1,14 +1,5 @@
 #include "OBB.h"
 
-
-OBB::OBB(void)
-{
-}
-
-
-OBB::~OBB(void)
-{#include "OBB.h"
-
 bool RaySlabIntersect(float start, float dir, float min, float max, float& tfirst, float& tlast)
 {
 	if (fabs(dir) < 1.0E-8)
@@ -278,5 +269,4 @@ void OBB::resetAABBandPoints()
        mAABB.merge(mPointsGlobal[i]);
    }
    mGlobalPointsDirty = false;
-}
 }
