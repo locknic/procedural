@@ -1,46 +1,57 @@
-﻿Build started 5/11/2016 6:24:26 PM.
+﻿Build started 5/11/2016 6:38:19 PM.
      1>Project "C:\p3test\p2\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AIManager.cpp Camera.cpp InputHandler.cpp LevelGenerator.cpp main.cpp MainListener.cpp MainMenu.cpp Monster.cpp OBB.cpp Player.cpp Project3.cpp Room.cpp Wall.cpp World.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MainListener.cpp World.cpp
          World.cpp
-     1>c:\p3test\p2\project3\world.cpp(31): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\p3test\p2\project3\world.cpp(47): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\p3test\p2\project3\world.cpp(49): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         Wall.cpp
-         Room.cpp
-     1>c:\p3test\p2\project3\room.cpp(19): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\p2\project3\room.cpp(20): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\p2\project3\room.cpp(21): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\p2\project3\room.cpp(22): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-         Project3.cpp
-         Player.cpp
-     1>c:\p3test\p2\project3\player.cpp(43): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-     1>c:\p3test\p2\project3\player.cpp(46): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-     1>c:\p3test\p2\project3\player.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-         OBB.cpp
-         Monster.cpp
-     1>c:\p3test\p2\project3\monster.cpp(14): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         MainMenu.cpp
-     1>c:\p3test\p2\project3\mainmenu.cpp(42): warning C4244: 'argument' : conversion from 'double' to 'const Ogre::Real', possible loss of data
-     1>c:\p3test\p2\project3\mainmenu.cpp(58): warning C4244: 'argument' : conversion from 'double' to 'const Ogre::Real', possible loss of data
+     1>c:\p3test\p2\project3\world.cpp(32): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\p3test\p2\project3\world.cpp(48): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
+     1>c:\p3test\p2\project3\world.cpp(50): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
          MainListener.cpp
-     1>c:\p3test\p2\project3\world.h(34): error C2061: syntax error : identifier 'OBB'
-         main.cpp
-         LevelGenerator.cpp
-     1>c:\p3test\p2\project3\levelgenerator.cpp(150): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\p2\project3\levelgenerator.cpp(154): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\p2\project3\levelgenerator.cpp(158): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\p2\project3\levelgenerator.cpp(162): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\p2\project3\levelgenerator.cpp(166): warning C4244: 'argument' : conversion from 'int' to 'const Ogre::Real', possible loss of data
-     1>c:\p3test\p2\project3\levelgenerator.cpp(172): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-     1>c:\p3test\p2\project3\levelgenerator.cpp(172): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         InputHandler.cpp
-         Camera.cpp
-     1>c:\p3test\p2\project3\camera.cpp(8): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         AIManager.cpp
          Generating Code...
-     1>Done Building Project "C:\p3test\p2\Project3\Project3.vcxproj" (Build target(s)) -- FAILED.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\p3test\p2\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\p3test\p2\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\p3test\p2\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
+         Debug\Camera.obj
+         Debug\InputHandler.obj
+         Debug\LevelGenerator.obj
+         Debug\main.obj
+         Debug\MainListener.obj
+         Debug\MainMenu.obj
+         Debug\Monster.obj
+         Debug\OBB.obj
+         Debug\Player.obj
+         Debug\Project3.obj
+         Debug\Room.obj
+         Debug\Wall.obj
+         Debug\World.obj
+         LINK : C:\p3test\p2\Debug\Project3.exe not found or not built by the last incremental link; performing full link
+         Project3.vcxproj -> C:\p3test\p2\Debug\Project3.exe
+       PostBuildEvent:
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\OgreMain_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\OgreOverlay_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\OIS_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D9_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D11_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_GL_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeZone_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeSceneManager_d.dll" "C:\p3test\p2\Debug\"
+         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_PCZSceneManager_d.dll" "C:\p3test\p2\Debug\"
+         
+         copy plugins_d.cfg "C:\p3test\p2\Debug\"
+         copy resources_d.cfg "C:\p3test\p2\Debug\"
+         :VCEnd
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+                 1 file(s) copied.
+     1>Done Building Project "C:\p3test\p2\Project3\Project3.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:02:14.12
+Time Elapsed 00:00:30.01

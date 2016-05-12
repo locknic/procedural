@@ -16,7 +16,7 @@ class Wall;
 class Room
 {
 public:
-    Room(Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position);
+    Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position);
 
 	Ogre::Entity *floorEnt;
 	Ogre::SceneNode *floor;

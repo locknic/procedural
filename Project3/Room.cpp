@@ -14,7 +14,7 @@
 #include "OgreTextAreaOverlayElement.h"
     
 
-Room::Room(Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position)  : mSceneManager(sceneManager)
+Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position)  : mWorld(world), mSceneManager(sceneManager)
 {
 	nWall = new Wall(mSceneManager, doors.x, position, Ogre::Radian(0));
 	eWall = new Wall(mSceneManager, doors.y, position, Ogre::Radian(Ogre::Math::PI/2));
