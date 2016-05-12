@@ -17,6 +17,7 @@ class Wall;
 class Room;
 class LevelGenerator;
 class Player;
+class OBB;
 
 class World
 {
@@ -31,6 +32,7 @@ public:
 	void restartGame();
 	void exitGame(){ keepGoing = false; }
 	GhostCamera* getCamera() { return mCamera; }
+	void addCollisionObject(OBB newObject);
 
 	Ogre::SceneManager *SceneManager() { return mSceneManager; }
 	Ogre::SceneNode *flashLight;

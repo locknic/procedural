@@ -23,6 +23,7 @@
 #include "MainMenu.h"
 #include "LevelGenerator.h"
 #include "Player.h"
+#include "OBB.h"
 
 
 World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneManager(sceneManager), mInputHandler(input)
@@ -110,5 +111,10 @@ void World::restartGame()
 	tank->restart();
 	tank->mTank->setPosition(0,1,0);
 	tank->mTank->attachObject(spot);
+
+}
+
+void World::addCollisionObject(OBB newObject)
+{
 
 }
