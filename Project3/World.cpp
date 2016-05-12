@@ -114,7 +114,7 @@ void World::restartGame()
 
 }
 
-void World::addCollisionObject(OBB newObject)
+void World::addCollisionObject(OBB *newObject)
 {
-
+	
 }

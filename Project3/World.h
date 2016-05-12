@@ -32,7 +32,7 @@ public:
 	void restartGame();
 	void exitGame(){ keepGoing = false; }
 	GhostCamera* getCamera() { return mCamera; }
-	void addCollisionObject(OBB newObject);
+	void addCollisionObject(OBB *newObject);
 
 	Ogre::SceneManager *SceneManager() { return mSceneManager; }
 	Ogre::SceneNode *flashLight;

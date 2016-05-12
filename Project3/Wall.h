@@ -31,6 +31,8 @@ public:
 	Ogre::SceneNode *noDoor;
 	Ogre::SceneNode *door;
 
+	Ogre::AxisAlignedBox getBox();
+
 public:
 	Ogre::SceneManager *mSceneManager;
 	World *mWorld;

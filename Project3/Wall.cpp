@@ -20,6 +20,7 @@ Wall::Wall(Ogre::SceneManager *sceneManager, int doorway, Ogre::Vector3 position
 	wall[0] = mSceneManager->getRootSceneNode()->createChildSceneNode();
 	wall[0]->attachObject(leftWall);
 
+
 	rightWall = mSceneManager->createEntity("RightWall.mesh");
 	wall[1] = mSceneManager->getRootSceneNode()->createChildSceneNode();
 	wall[1]->attachObject(rightWall);
@@ -43,5 +44,10 @@ Wall::Wall(Ogre::SceneManager *sceneManager, int doorway, Ogre::Vector3 position
 		wall[i]->setPosition(position);
 		wall[i]->yaw(angleoffset);
 	}
-	
 }
+	Ogre::AxisAlignedBox Wall::getBox() {
+		return leftWall->getBoundingBox();
+	}
+
+
+
