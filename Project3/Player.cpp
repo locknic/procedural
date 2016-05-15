@@ -32,6 +32,25 @@ Player::~Player(void)
 void 
 Player::Think(float time, InputHandler *mInputHandler)
 {
+	playerOBB->setScale(Ogre::Vector3(0.5, 0.5, 0.5));
+	playerOBB->setPosition(mTank->getPosition());
+	playerOBB->setOrientation(mTank->getOrientation());
+
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+	{
+		for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+		{
+			Ogre::Vector3 moveVector;
+
+			if ((*it)->collides(playerOBB, moveVector) == true)
+			{
+				mTank->translate(-moveVector);
+				playerOBB->setPosition(mTank->getPosition());
+			}
+			
+		}
+	}
 
 	const float RADIANS_PER_SECOND = 1;
 	const float SPEED = 7;
@@ -52,41 +71,24 @@ Player::Think(float time, InputHandler *mInputHandler)
 	}
 
 
-	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
+	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT) || mInputHandler->IsKeyDown(OIS::KC_D))
 	{
 		mTank->translate(time * SPEED, 0, 0, Ogre::Node::TS_LOCAL);
 	}
-	else if (mInputHandler->IsKeyDown(OIS::KC_LEFT))
+	else if (mInputHandler->IsKeyDown(OIS::KC_LEFT) || mInputHandler->IsKeyDown(OIS::KC_A))
 	{
 		mTank->translate(-time * SPEED, 0, 0, Ogre::Node::TS_LOCAL);
 	}
-	if (mInputHandler->IsKeyDown(OIS::KC_UP))
+	if (mInputHandler->IsKeyDown(OIS::KC_UP) || mInputHandler->IsKeyDown(OIS::KC_W))
 	{
 		mTank->translate(0, 0, -time * SPEED, Ogre::Node::TS_LOCAL);
 	}
-	else if (mInputHandler->IsKeyDown(OIS::KC_DOWN))
+	else if (mInputHandler->IsKeyDown(OIS::KC_DOWN) || mInputHandler->IsKeyDown(OIS::KC_S))
 	{
 		mTank->translate(0, 0, time * SPEED, Ogre::Node::TS_LOCAL);
 	}
 
-	playerOBB->setPosition(mTank->getPosition());
-	playerOBB->setOrientation(mTank->getOrientation());
-
-
-	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
-	{
-		for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
-		{
-			Ogre::Vector3 moveVector;
-
-			if ((*it)->collides(playerOBB, moveVector))
-			{
-
-			}
-			
-			mTank->translate(moveVector);
-		}
-	}
+	
 
 
 	//Quick and dirty: Fixes issue of moving up if aiming up. If ground not at 0, change y component to be whatever the ground is at.

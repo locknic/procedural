@@ -30,7 +30,7 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 
 	leftWall = mSceneManager->createEntity("LeftWall.mesh");
 	lWall = mSceneManager->getRootSceneNode()->createChildSceneNode();
-	lWall->attachObject(leftWall); 
+	//lWall->attachObject(leftWall); 
 	lWall->setVisible(false);
 
 	obj1 = new OBB(leftWall->getBoundingBox(), nWall->wall[0]->getPosition(),nWall->wall[0]->getOrientation());
