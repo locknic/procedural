@@ -118,6 +118,7 @@ void
 	furn->attachObject(furnEnt);
 	furn->scale(.75, .75, .75);
 	furn->rotate(Ogre::Vector3::UNIT_X,Ogre::Degree(90),Ogre::Node::TS_WORLD );
+	furn->setPosition(3, 0, 3);
 	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
 	obj1->setScale(Ogre::Vector3(.75,.75,.75));
 	mWorld->addCollisionObject(obj1);

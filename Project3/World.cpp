@@ -15,6 +15,9 @@
 
 #include <ois/ois.h>
 
+#include <stdlib.h>
+#include <vector>
+
 // Other input files for my project
 #include "Camera.h"
 #include "Wall.h"
@@ -40,7 +43,8 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 		iter.getNext()->load(); 
 	}
 
-	
+	mStaticCollisions = new std::vector<OBB*>;
+
 	spot = mSceneManager->createLight("Flashlight");
     spot->setType(Ogre::Light::LT_SPOTLIGHT);
     spot->setDiffuseColour(1.0, 1.0, 1.0);
@@ -116,5 +120,5 @@ void World::restartGame()
 
 void World::addCollisionObject(OBB *newObject)
 {
-	
+	mStaticCollisions->push_back(newObject);
 }

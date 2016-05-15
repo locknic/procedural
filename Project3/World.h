@@ -1,6 +1,7 @@
 #ifndef __World_h_
 #define __World_h_
 
+#include <vector>
 // Forward delcarations of Ogre classes.  Note the Ogre namespace!
 namespace Ogre {
     class SceneNode;
@@ -38,10 +39,6 @@ public:
 	Ogre::SceneNode *flashLight;
 	Player *tank;
 
-
-public:
-
-
 	Ogre::SceneManager *mSceneManager;
 
 	InputHandler *mInputHandler;
@@ -49,11 +46,15 @@ public:
 	MainMenu *mMainMenu;
 	LevelGenerator *mLevelGenerator;
 
+	std::vector<OBB*> *mStaticCollisions;
+
 private:
 	
 	bool keepGoing;
 
 	Ogre::Light *spot;
+
+	
 
 };
 

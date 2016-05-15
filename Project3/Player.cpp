@@ -4,7 +4,8 @@
 #include "OgreSceneManager.h"
 #include "OgreSceneNode.h"
 #include "Ogre.h"
-
+#include "OBB.h"
+#include "MainMenu.h"
 Player::Player(World *world) : mWorld(world)
 {
 
@@ -17,9 +18,10 @@ Player::restart()
 	tankEntity = mWorld->SceneManager()->createEntity("DrawCall_640.001.mesh");
 	mTank = mWorld->SceneManager()->getRootSceneNode()->createChildSceneNode();
 	mTank->attachObject(tankEntity);
-	mTank->setPosition(0, 0, 20);
+	mTank->setPosition(0, 1, 20);
 	mTank->scale(.5,.5,.5);
 	mTank->setVisible(false);
+	playerOBB = new OBB(tankEntity->getBoundingBox(), mTank->getPosition(), mTank->getOrientation());
 }
 
 Player::~Player(void)
@@ -49,6 +51,7 @@ Player::Think(float time, InputHandler *mInputHandler)
 		mTank->pitch((Ogre::Degree) my*-10 / 60);
 	}
 
+
 	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
 	{
 		mTank->translate(time * SPEED, 0, 0, Ogre::Node::TS_LOCAL);
@@ -65,7 +68,27 @@ Player::Think(float time, InputHandler *mInputHandler)
 	{
 		mTank->translate(0, 0, time * SPEED, Ogre::Node::TS_LOCAL);
 	}
-	
+
+	playerOBB->setPosition(mTank->getPosition());
+	playerOBB->setOrientation(mTank->getOrientation());
+
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+	{
+		for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+		{
+			Ogre::Vector3 moveVector;
+
+			if ((*it)->collides(playerOBB, moveVector))
+			{
+
+			}
+			
+			mTank->translate(moveVector);
+		}
+	}
+
+
 	//Quick and dirty: Fixes issue of moving up if aiming up. If ground not at 0, change y component to be whatever the ground is at.
 	mTank->setPosition(mTank->getPosition().x, 1, mTank->getPosition().z);
 

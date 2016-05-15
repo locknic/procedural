@@ -1,14 +1,13 @@
-﻿Build started 5/12/2016 3:47:44 PM.
-     1>Project "C:\p3test\Updated\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
+﻿Build started 15/05/2016 04:49:55.
+     1>Project "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Room.cpp
-         Room.cpp
-     1>c:\p3test\updated\procedural\project3\room.cpp(20): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\updated\procedural\project3\room.cpp(21): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\updated\procedural\project3\room.cpp(22): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\updated\procedural\project3\room.cpp(23): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Player.cpp
+         Player.cpp
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\player.cpp(45): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\player.cpp(48): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\player.cpp(51): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\p3test\Updated\procedural\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\p3test\Updated\procedural\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\p3test\Updated\procedural\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
          Debug\Camera.obj
          Debug\InputHandler.obj
          Debug\LevelGenerator.obj
@@ -22,20 +21,20 @@
          Debug\Room.obj
          Debug\Wall.obj
          Debug\World.obj
-         Project3.vcxproj -> C:\p3test\Updated\procedural\Debug\Project3.exe
+         Project3.vcxproj -> C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.exe
        PostBuildEvent:
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\OgreMain_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\OgreOverlay_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\OIS_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D9_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D11_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_GL_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeZone_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeSceneManager_d.dll" "C:\p3test\Updated\procedural\Debug\"
-         copy "C:\OgreSDK\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_PCZSceneManager_d.dll" "C:\p3test\Updated\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\OgreMain_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\OgreOverlay_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\OIS_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D9_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_Direct3D11_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\RenderSystem_GL_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeZone_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_OctreeSceneManager_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy "C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0\bin\Debug\Plugin_PCZSceneManager_d.dll" "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
          
-         copy plugins_d.cfg "C:\p3test\Updated\procedural\Debug\"
-         copy resources_d.cfg "C:\p3test\Updated\procedural\Debug\"
+         copy plugins_d.cfg "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
+         copy resources_d.cfg "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\"
          :VCEnd
                  1 file(s) copied.
                  1 file(s) copied.
@@ -48,8 +47,8 @@
                  1 file(s) copied.
                  1 file(s) copied.
                  1 file(s) copied.
-     1>Done Building Project "C:\p3test\Updated\procedural\Project3\Project3.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Project3\Project3.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:16.49
+Time Elapsed 00:00:12.91

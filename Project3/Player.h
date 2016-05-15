@@ -5,6 +5,7 @@
 
 class World;
 class InputHandler;
+class OBB;
 
 class Player
 {
@@ -29,4 +30,6 @@ private:
 	Ogre::Real mMove;
 	Ogre::SceneNode* mCamNode;
 	Ogre::Vector3 mDirection;
+	
+	OBB  *playerOBB;
 };
