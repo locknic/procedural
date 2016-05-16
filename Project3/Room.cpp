@@ -41,6 +41,8 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 		obj4 = new OBB(nWall->doorWay->getBoundingBox(), nWall->wall[3]->getPosition(),nWall->wall[3]->getOrientation());
 	} else {
 		obj4 = new OBB(nWall->doorFill->getBoundingBox(), nWall->wall[3]->getPosition(),nWall->wall[3]->getOrientation());
+		obj4->setScale(Ogre::Vector3(5, 5, 5));
+		mWorld->addCollisionObject(obj4);
 	}
 	
 	obj5 = new OBB(leftWall->getBoundingBox() , eWall->wall[0]->getPosition(),eWall->wall[0]->getOrientation());
@@ -51,6 +53,8 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 		obj8 = new OBB(eWall->doorWay->getBoundingBox(), eWall->wall[3]->getPosition(),eWall->wall[3]->getOrientation());
 	} else {
 		obj8 = new OBB(eWall->doorFill->getBoundingBox(), eWall->wall[3]->getPosition(),eWall->wall[3]->getOrientation());
+		obj8->setScale(Ogre::Vector3(5, 5, 5));
+		mWorld->addCollisionObject(obj8);
 	}
 
 	obj9 = new OBB(leftWall->getBoundingBox(), sWall->wall[0]->getPosition(),sWall->wall[0]->getOrientation());
@@ -61,6 +65,8 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 		obj12 = new OBB(sWall->doorWay->getBoundingBox(), sWall->wall[3]->getPosition(),sWall->wall[3]->getOrientation());
 	} else {
 		obj12 = new OBB(sWall->doorFill->getBoundingBox(),sWall->wall[3]->getPosition(),sWall->wall[3]->getOrientation());
+		obj12->setScale(Ogre::Vector3(5, 5, 5));
+		mWorld->addCollisionObject(obj12);
 	}
 
 	obj13 = new OBB(leftWall->getBoundingBox(), wWall->wall[0]->getPosition(),wWall->wall[0]->getOrientation());
@@ -71,41 +77,41 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 		obj16 = new OBB(wWall->doorWay->getBoundingBox(), wWall->wall[3]->getPosition(),wWall->wall[3]->getOrientation());
 	} else {
 		obj16 = new OBB(wWall->doorFill->getBoundingBox(), wWall->wall[3]->getPosition(),wWall->wall[3]->getOrientation());
+		obj16->setScale(Ogre::Vector3(5, 5, 5));
+		mWorld->addCollisionObject(obj16);
 	}
 
 	obj1->setScale(Ogre::Vector3(5, 5, 5));
 	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
-	obj2->setScale(Ogre::Vector3(5, 5, 5));
+	obj3->setScale(Ogre::Vector3(5, 5, 5));
+
+	obj5->setScale(Ogre::Vector3(5, 5, 5));
+	obj6->setScale(Ogre::Vector3(5, 5, 5));
+	obj7->setScale(Ogre::Vector3(5, 5, 5));
+
+	obj9->setScale(Ogre::Vector3(5, 5, 5));
+	obj10->setScale(Ogre::Vector3(5, 5, 5));
+	obj11->setScale(Ogre::Vector3(5, 5, 5));
+
+	obj13->setScale(Ogre::Vector3(5, 5, 5));
+	obj14->setScale(Ogre::Vector3(5, 5, 5));
+	obj15->setScale(Ogre::Vector3(5, 5, 5));
 
 	mWorld->addCollisionObject(obj1);
 	mWorld->addCollisionObject(obj2);
 	mWorld->addCollisionObject(obj3);
-	mWorld->addCollisionObject(obj4);
+	
 	mWorld->addCollisionObject(obj5);
 	mWorld->addCollisionObject(obj6);
 	mWorld->addCollisionObject(obj7);
-	mWorld->addCollisionObject(obj8);
+
 	mWorld->addCollisionObject(obj9);
 	mWorld->addCollisionObject(obj10);
 	mWorld->addCollisionObject(obj11);
-	mWorld->addCollisionObject(obj12);
+
 	mWorld->addCollisionObject(obj13);
 	mWorld->addCollisionObject(obj14);
 	mWorld->addCollisionObject(obj15);
-	mWorld->addCollisionObject(obj16);
 
 	getPiano(sceneManager, position);
 	
