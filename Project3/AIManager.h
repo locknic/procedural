@@ -1,7 +1,6 @@
 #ifndef __AIManager_h_
 #define __AIManager_h_
 
-
 class World;
 
 class AIManager 

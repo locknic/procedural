@@ -53,13 +53,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(OGRE_HOME)/include/OGRE/Overlay;$(OGRE_HOME)/boost/;$(OGRE_HOME)/include/OIS;$(OGRE_HOME)/include/OGRE;$(OGRE_HOME)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\p3test\New\procedural\SDL2-2.0.3\SDL2-2.0.3\include;C:\p3test\New\procedural\SDL2_mixer-2.0.0\SDL2_mixer-2.0.0\include;$(OGRE_HOME)/include/OGRE/Overlay;$(OGRE_HOME)/boost/;$(OGRE_HOME)/include/OIS;$(OGRE_HOME)/include/OGRE;$(OGRE_HOME)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(OGRE_HOME)/boost/lib;$(OGRE_HOME)/lib/$(configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OIS_d.lib;OgreMain_d.lib;OgreOverlay_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\p3test\New\procedural\SDL2-2.0.3\SDL2-2.0.3\lib\x86;C:\p3test\New\procedural\SDL2_mixer-2.0.0\SDL2_mixer-2.0.0\lib\x86;$(OGRE_HOME)/boost/lib;$(OGRE_HOME)/lib/$(configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OIS_d.lib;OgreMain_d.lib;OgreOverlay_d.lib;SDL2_mixer.lib;SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(OGRE_HOME)\bin\$(Configuration)\OgreMain_d.dll" "$(OutDir)"
@@ -71,6 +71,11 @@ copy "$(OGRE_HOME)\bin\$(Configuration)\RenderSystem_GL_d.dll" "$(OutDir)"
 copy "$(OGRE_HOME)\bin\$(Configuration)\Plugin_OctreeZone_d.dll" "$(OutDir)"
 copy "$(OGRE_HOME)\bin\$(Configuration)\Plugin_OctreeSceneManager_d.dll" "$(OutDir)"
 copy "$(OGRE_HOME)\bin\$(Configuration)\Plugin_PCZSceneManager_d.dll" "$(OutDir)"
+copy "..\SDL2-2.0.3\lib\x86\SDL2.dll" "$(OutDir)"
+copy "..\SDL2_mixer-2.0.0\lib\x86\SDL2_mixer.dll" "$(OutDir)"
+copy "..\SDL2_mixer-2.0.0\lib\x86\libogg-0.dll" "$(OutDir)"
+copy "..\SDL2_mixer-2.0.0\lib\x86\libvorbis-0.dll" "$(OutDir)"
+copy "..\SDL2_mixer-2.0.0\lib\x86\libvorbisfile-3.dll" "$(OutDir)"
 
 copy plugins_d.cfg "$(OutDir)"
 copy resources_d.cfg "$(OutDir)"</Command>
@@ -113,12 +118,14 @@ copy resources.cfg "$(OutDir)"</Command>
   <ItemGroup>
     <ClInclude Include="AIManager.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="FileUtil.h" />
     <ClInclude Include="LevelGenerator.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="OBB.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MainListener.h" />
@@ -128,6 +135,7 @@ copy resources.cfg "$(OutDir)"</Command>
   <ItemGroup>
     <ClCompile Include="AIManager.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="FileUtil.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="LevelGenerator.cpp" />
     <ClCompile Include="main.cpp" />
@@ -138,6 +146,7 @@ copy resources.cfg "$(OutDir)"</Command>
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Project3.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Wall.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

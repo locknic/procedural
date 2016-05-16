@@ -19,7 +19,7 @@ Player::restart()
 	mTank = mWorld->SceneManager()->getRootSceneNode()->createChildSceneNode();
 	mTank->attachObject(tankEntity);
 	mTank->setPosition(0, 1, 20);
-	mTank->scale(.5,.5,.5);
+	mTank->scale(.5,.3,.5);
 	mTank->setVisible(false);
 	playerOBB = new OBB(tankEntity->getBoundingBox(), mTank->getPosition(), mTank->getOrientation());
 }
@@ -32,7 +32,7 @@ Player::~Player(void)
 void 
 Player::Think(float time, InputHandler *mInputHandler)
 {
-	playerOBB->setScale(Ogre::Vector3(0.5, 0.5, 0.5));
+	playerOBB->setScale(Ogre::Vector3(0.5, 0.3, 0.5));
 	playerOBB->setPosition(mTank->getPosition());
 	playerOBB->setOrientation(mTank->getOrientation());
 

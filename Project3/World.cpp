@@ -27,6 +27,8 @@
 #include "LevelGenerator.h"
 #include "Player.h"
 #include "OBB.h"
+#include "Sound.h"
+#include <SDL_mixer.h>
 
 
 World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneManager(sceneManager), mInputHandler(input)
@@ -50,21 +52,19 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
     spot->setDiffuseColour(1.0, 1.0, 1.0);
 	spot->setSpecularColour(1.0, 1.0, 1.0);
 	spot->setPosition(0, .1, 5);
-	//spot->setAttenuation(3250.0,1.0,0.0014,0.000007);
-	spot->setAttenuation(15.0,1.0,0.15,0.0075);
+	spot->setAttenuation(100.0,0.5,0.045,0.0075);
 	spot->setDirection((Ogre::Vector3(0.0, 0.0, 0.0) - Ogre::Vector3(0.0, 0.0, 100.0)).normalisedCopy());
     spot->setSpotlightRange(Ogre::Degree(5),Ogre::Degree(20),0.7f);
-	//spot->setCastShadows(false);
-	
-
-
+	SoundBank *s = new SoundBank();
+	s->setup();
+	s->openFile("ExtremeHorror.wav", "monster", 0);
+	s->fadeIn("monster", 0, true);
+	s->setEnableSound(true);
 	mLevelGenerator = new LevelGenerator(this, mSceneManager);
 	tank = new Player(this);
 	restartGame();
-
 	mMainMenu = new MainMenu(this, mInputHandler);
 	mMainMenu->displayMenu();
-
 	keepGoing = true;
 	
 }

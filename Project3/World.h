@@ -19,6 +19,9 @@ class Room;
 class LevelGenerator;
 class Player;
 class OBB;
+class Sound;
+class SoundChunk;
+class SoundBank;
 
 class World
 {
@@ -47,13 +50,14 @@ public:
 	LevelGenerator *mLevelGenerator;
 
 	std::vector<OBB*> *mStaticCollisions;
+	
 
 private:
 	
 	bool keepGoing;
 
 	Ogre::Light *spot;
-
+	//SoundBank *s;
 	
 
 };
