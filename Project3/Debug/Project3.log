@@ -1,4 +1,4 @@
-﻿Build started 17/05/2016 20:40:51.
+﻿Build started 18/05/2016 04:09:25.
      1>Project "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt World.cpp
@@ -63,4 +63,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:12.70
+Time Elapsed 00:00:12.15

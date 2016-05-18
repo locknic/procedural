@@ -19,6 +19,7 @@ public:
 	void restart();
 	Ogre::SceneNode *mTank;
 	Ogre::Entity *tankEntity;
+	OBB  *playerOBB;
 
 private:
 
@@ -31,5 +32,4 @@ private:
 	Ogre::SceneNode* mCamNode;
 	Ogre::Vector3 mDirection;
 	
-	OBB  *playerOBB;
 };

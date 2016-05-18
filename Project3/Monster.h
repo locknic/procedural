@@ -12,7 +12,7 @@ namespace Ogre {
 }
 
 class World;
-
+class OBB;
 
 class Monster 
 {
@@ -22,15 +22,22 @@ public:
 	Monster(World *world);
 	~Monster();
 
+	Ogre::SceneNode *mMonster;
+	Ogre::Entity *ent1;
     // Go through all of the AIs, and call think on each one
     void Think(float time, Ogre::Vector3 pos);
+	OBB *monsterOBB;
 
 protected:
 	World *mWorld;
 	
     // Probablay want a list of individual AI classes here ...
-public:
-Ogre::SceneNode *mMonster;
-Ogre::Entity *ent1;
+private:
+	bool targetingPlayer;
+	bool reachedTarget;
+	bool hitDoor;
+	float targetX;
+	float targetZ;
+
 };
 #endif

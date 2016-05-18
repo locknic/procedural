@@ -17,6 +17,12 @@ public:
 	LevelGenerator(World *world, Ogre::SceneManager *sceneManager);
 	void generateLevel(int rows, int columns, int roomWidth, int monsters);
 	void Think(float time);
+	int getRoomNumberX(int xCo);
+	int getRoomNumberZ(int zCo);
+	bool checkRoomExists(int x, int y);
+	float getRoomXco(int x);
+	float getRoomZco(int z);
+	float getDoorCo(float x1, float x2);
 
 private:
 	void generateBranches(int currentRow, int currentColumn);

@@ -77,6 +77,7 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	mOverlay = om.getByName("Battery");
 	text = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Battery/Panel/Text1");
 	released = true;
+	restart = false;
 }
 
 void 
@@ -90,7 +91,6 @@ World::Think(float time)
 	text->setCaption(final);
 	if (!mMainMenu->getInMenu())
 	{
-		mLevelGenerator->Think(time);
 		if (mInputHandler->IsKeyDown(OIS::KC_F)) 
 		{
 			if (released)
@@ -121,13 +121,13 @@ World::Think(float time)
 		k++;
 		if (light == false && life < 100 ) 
 		{
-			life += time * 20;
+			life += time * 10;
 		} 
 		else if (light == true) 
 		{
 			if (life > 0) 
 			{
-			life -= 40 * time;
+			life -= 20 * time;
 			} 
 			else 
 			{
@@ -144,18 +144,28 @@ World::Think(float time)
 
 		mCamera->setPositionFromGhostPosition(tank->mTank->getOrientation(), tank->mTank->getPosition());
 		mCamera->setOrientationFromGhostOrientation(tank->mTank->getOrientation());
+		mLevelGenerator->Think(time);
+
+		if(restart)
+		{
+			restart = false;
+			restartGame();
+			mMainMenu->displayMenu();
+		}
 	}
 }
 
 void World::restartGame()
 {
+	restart = false;
 	mSceneManager->getRootSceneNode()->removeAndDestroyAllChildren();
+	mStaticCollisions->clear();
 
 	mLevelGenerator->generateLevel(9,9,10,1);
 	tank->restart();
 	tank->mTank->setPosition(0,1,0);
 	tank->mTank->attachObject(spot);
-
+	life = 100;
 }
 
 void World::addCollisionObject(OBB *newObject)

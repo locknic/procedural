@@ -53,6 +53,7 @@ public:
 
 	std::vector<OBB*> *mStaticCollisions;
 	
+	bool restart; 
 
 private:
 	

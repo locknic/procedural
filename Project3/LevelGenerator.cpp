@@ -33,6 +33,71 @@ void LevelGenerator::Think(float time)
 	}
 }
 
+int LevelGenerator::getRoomNumberX(int xCo)
+{
+	float result = xCo / (mRoomWidth + 0.0);
+	if (result > 0)
+	{
+		result += 0.5;
+	}
+	else
+	{
+		result -= 0.5;
+	}
+	int returning = (int) result;
+	return returning;
+}
+
+int LevelGenerator::getRoomNumberZ(int zCo)
+{
+	float result = zCo / (mRoomWidth + 0.0);
+	if (result > 0)
+	{
+		result += 0.5;
+	}
+	else
+	{
+		result -= 0.5;
+	}
+	int returning = (int) result;
+	return returning;
+}
+
+float LevelGenerator::getRoomXco(int x)
+{
+	return (x * mRoomWidth);
+}
+
+float LevelGenerator::getRoomZco(int z)
+{
+	return (z * mRoomWidth);
+}
+
+float LevelGenerator::getDoorCo(float x1, float x2)
+{
+	float returning = 0;
+	x1 = getRoomNumberX(x1);
+	x2 = getRoomNumberX(x2);
+	if (x1 - x2 > 0)
+	{
+		returning = x1 * mRoomWidth - 0.5 * mRoomWidth;
+	}
+	else if (x1 - x2 < 0)
+	{
+		returning = x1 * mRoomWidth + 0.5 * mRoomWidth;
+	}
+	else
+	{
+		returning = x1 * mRoomWidth;
+	}
+	return returning;
+}
+
+bool LevelGenerator::checkRoomExists(int x, int z)
+{
+	return (getArrayValueAt(mRooms, x + mRows / 2, z + mColumns / 2));
+}
+
 void LevelGenerator::generateLevel(int rows, int columns, int roomWidth, int monsters)
 {
 	mRows = rows;
@@ -105,7 +170,7 @@ void LevelGenerator::generateMonsters()
 	{
 		int roomX = (mRows - 1) / 2;
 		int roomY = (mColumns - 1) / 2;
-		while (roomX < (mRows - 1) / 2 + 1 && roomX > (mRows - 1) / 2 - 1  && roomY < (mColumns - 1) / 2 + 1 && roomY > (mColumns - 1) / 2 - 1)
+		while (roomX == (int)(mRows / 2) && roomY == (int)(mColumns / 2))
 		{
 			roomX = rand() % (mRows - 1);
 			roomY = rand() % (mColumns - 1);
