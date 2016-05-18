@@ -132,3 +132,30 @@ ExitButton
 		}
     }
 }
+
+Instructions
+{
+    zorder 200
+	
+    container Panel(Instructions/Panel)
+    {
+      metrics_mode relative
+
+      left 0.45
+      top 0.25
+      width 0.35
+      height 0.5
+	  
+		element TextArea(Instructions/Panel/Text1)
+		{
+		metrics_mode relative
+		
+         left 0
+		 top 0
+         font_name BlueHighwayBig
+         char_height 0.05
+         colour 1 1 1
+         caption FIND THE LADDER TO THE NEXT LEVEL. \n\n AVOID THE MONSTERS. \n\n WASD TO MOVE \n SPACE TO SPRINT \n F TO TOGGLE FLASHLIGHT \n\n
+		}
+    }
+}

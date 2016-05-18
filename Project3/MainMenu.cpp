@@ -17,6 +17,7 @@ MainMenu::MainMenu(World *world, InputHandler *input) : mWorld(world), mInputHan
 	mPlayButtonOverlay = om.getByName("PlayButton");
 	mRestartButtonOverlay = om.getByName("RestartButton");
 	mExitButtonOverlay= om.getByName("ExitButton");
+	mInstructionsOverlay = om.getByName("Instructions");
 	optionSelected = 0;
 	released = true;
 
@@ -29,6 +30,9 @@ MainMenu::MainMenu(World *world, InputHandler *input) : mWorld(world), mInputHan
 	Ogre::TextAreaOverlayElement *te3 = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("ExitButton/Panel/Text1");
 	te3->setCaption("  EXIT  ");
 
+	Ogre::TextAreaOverlayElement *te4 = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Instructions/Panel/Text1");
+	te4->setCaption("FIND THE LADDER TO GET THE NEXT LEVEL \n\n AVOID THE MONSTERS \n\n WASD TO MOVE \n SPACE TO SPRINT \n F TO TOGGLE FLASHLIGHT \n\n");
+	
 	transitionIn = 0;
 	transitionOut = 0;
 	cameraY = 0;
@@ -116,11 +120,21 @@ void MainMenu::Think(float time)
 	{
 		if (mInputHandler->IsKeyDown(OIS::KC_ESCAPE))
 		{
+			Ogre::OverlayManager& om = Ogre::OverlayManager::getSingleton();
+			Ogre::TextAreaOverlayElement *te4 = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Instructions/Panel/Text1");
+			te4->setCaption("FIND THE LADDER TO GET THE NEXT LEVEL \n\n AVOID THE MONSTERS \n\n WASD TO MOVE \n SPACE TO SPRINT \n F TO TOGGLE FLASHLIGHT \n\n");
 			optionSelected = 0;
 			changeOption(0);
 			displayMenu();
 		}
 	}
+}
+
+void MainMenu::killPlayer()
+{
+	Ogre::OverlayManager& om = Ogre::OverlayManager::getSingleton();
+	Ogre::TextAreaOverlayElement *te4 = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Instructions/Panel/Text1");
+	te4->setCaption("YOU DIED. DON'T DO THAT. \n\n FIND THE LADDER TO GET THE NEXT LEVEL \n\n AVOID THE MONSTERS \n\n WASD TO MOVE \n SPACE TO SPRINT \n F TO TOGGLE FLASHLIGHT \n\n");
 }
 
 void MainMenu::displayMenu()
@@ -129,6 +143,7 @@ void MainMenu::displayMenu()
 	mPlayButtonOverlay->show();
 	mRestartButtonOverlay ->show();
 	mExitButtonOverlay->show();
+	mInstructionsOverlay->show();
 	transitionOut = 1;
 	transitionIn = 0;
 	inMenu = true;
@@ -140,6 +155,7 @@ void MainMenu::hideMenu()
 	mPlayButtonOverlay->hide();
 	mRestartButtonOverlay->hide();
 	mExitButtonOverlay->hide();
+	mInstructionsOverlay->hide();
 	transitionOut = 0;
 	transitionIn = 1;
 }
