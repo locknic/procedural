@@ -156,6 +156,7 @@ World::Think(float time)
 			restart = false;
 			restartGame();
 			mMainMenu->displayMenu();
+			mMainMenu->killPlayer();
 		}
 	}
 }

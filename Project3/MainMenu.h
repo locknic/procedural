@@ -24,6 +24,7 @@ public:
 	void selectOption();
 	void release();
 	bool getInMenu() { return inMenu; }
+	void killPlayer();
 
 public:
 	World *mWorld;
@@ -41,5 +42,6 @@ public:
 	Ogre::Overlay *mRestartButtonOverlay;
 	Ogre::Overlay *mPlayButtonOverlay;
 	Ogre::Overlay *mExitButtonOverlay;
+	Ogre::Overlay *mInstructionsOverlay;
 };
 #endif
