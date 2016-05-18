@@ -12,6 +12,7 @@
 #include "LevelGenerator.h"
 #include "OBB.h"
 #include "Player.h"
+#include "Sound.h"
 
 Monster::Monster(World *world) : mWorld(world)
 {
@@ -27,6 +28,12 @@ Monster::Monster(World *world) : mWorld(world)
 	targetZ = 0;
 
 	monsterOBB = new OBB(ent1->getBoundingBox(), mMonster->getPosition(), mMonster->getOrientation());
+
+	s = new SoundBank();
+	s->setup();
+	s->openFile("Zombie.wav", "zombie1", 0);
+	s->openFile("Zombie1.wav", "zombie2", 0);
+	s->openFile("Death.wav", "death", 0);
 }
 
 Monster::~Monster()
@@ -45,6 +52,17 @@ void
 
 	if (mWorld->mLevelGenerator->getRoomNumberX(mMonster->getPosition().x) == mWorld->mLevelGenerator->getRoomNumberX(pos.x) && mWorld->mLevelGenerator->getRoomNumberZ(mMonster->getPosition().z) == mWorld->mLevelGenerator->getRoomNumberZ(pos.z))
 	{
+		if (!targetingPlayer)
+		{
+			if (rand() % 100 < 50)
+			{
+				s->play("zombie1");
+			}
+			else
+			{
+				s->play("zombie2");
+			}
+		}
 		targetingPlayer = true;
 		SPEED = 3.5;
 	}
@@ -189,6 +207,7 @@ void
 		Ogre::Vector3 moveVector;
 		if (monsterOBB->collides(mWorld->tank->playerOBB, moveVector) == true)
 		{
+			s->play("death");
 			mWorld->restart = true;
 		}
 	}

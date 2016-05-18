@@ -1,11 +1,16 @@
-﻿Build started 18/05/2016 04:09:25.
+﻿Build started 18/05/2016 04:26:04.
      1>Project "C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt World.cpp
-         World.cpp
-     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\world.cpp(37): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\world.cpp(54): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\world.cpp(55): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Monster.cpp
+         Monster.cpp
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(22): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(49): warning C4305: 'argument' : truncation from 'double' to 'const Ogre::Real'
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(53): warning C4244: 'argument' : conversion from 'const Ogre::Real' to 'int', possible loss of data
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(53): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(73): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(74): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(91): warning C4244: 'argument' : conversion from 'const Ogre::Real' to 'int', possible loss of data
+     1>c:\users\dominic mortlock\documents\my documents\usf\computer science\cs420\procedural\project3\monster.cpp(92): warning C4244: 'argument' : conversion from 'const Ogre::Real' to 'int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"../SDL2-2.0.3/SDL2-2.0.3/lib/x86/" /LIBPATH:"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/lib/x86" /LIBPATH:"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\Users\Dominic Mortlock\Documents\Ogre\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib SDL2_mixer.lib SDL2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dominic Mortlock\Documents\My Documents\USF\Computer Science\CS420\procedural\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
          Debug\Camera.obj
@@ -63,4 +68,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:12.15
+Time Elapsed 00:00:11.85

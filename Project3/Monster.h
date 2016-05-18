@@ -13,6 +13,7 @@ namespace Ogre {
 
 class World;
 class OBB;
+class SoundBank;
 
 class Monster 
 {
@@ -38,6 +39,6 @@ private:
 	bool hitDoor;
 	float targetX;
 	float targetZ;
-
+	SoundBank *s;
 };
 #endif
