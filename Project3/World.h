@@ -51,14 +51,17 @@ public:
 	MainMenu *mMainMenu;
 	LevelGenerator *mLevelGenerator;
 
+
+
 	std::vector<OBB*> *mStaticCollisions;
 	
 	bool restart; 
-
+	OBB  *obj1;
+	bool light;
 private:
 	
 	bool keepGoing;
-	bool light;
+	
 	bool released;
 	int k;
 	int i;
@@ -66,6 +69,14 @@ private:
 	Ogre::Overlay *mOverlay;
 	Ogre::TextAreaOverlayElement *text;
 	Ogre::Light *spot;
+
+	Ogre::SceneNode* mBeam;
+	Ogre::SceneNode* mFlashlight;
+	Ogre::Entity *beamEntity;
+	Ogre::Entity *flashEntity;
+	
+	OBB  *obj2;
+
 };
 
 #endif

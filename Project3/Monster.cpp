@@ -49,7 +49,7 @@ void
 	monsterOBB->setScale(Ogre::Vector3(0.3, 0.3, 0.3));
 	monsterOBB->setPosition(mMonster->getPosition());
 	monsterOBB->setOrientation(mMonster->getOrientation());
-
+	
 	if (mWorld->mLevelGenerator->getRoomNumberX(mMonster->getPosition().x) == mWorld->mLevelGenerator->getRoomNumberX(pos.x) && mWorld->mLevelGenerator->getRoomNumberZ(mMonster->getPosition().z) == mWorld->mLevelGenerator->getRoomNumberZ(pos.z))
 	{
 		if (!targetingPlayer)
@@ -195,16 +195,24 @@ void
 				}
 			}
 		}
-		
+		Ogre::Vector3 moveVector;
+		if (monsterOBB->collides(mWorld->obj1, moveVector) == true && mWorld->light == true) {
+			mMonster->translate(
+			(o.x * -SPEED * time),
+			(0),
+			(o.z * -SPEED * time),
+			Ogre::Node::TS_WORLD);
+		} else {
 		mMonster->translate(
 			(o.x * SPEED * time),
 			(0),
 			(o.z * SPEED * time),
 			Ogre::Node::TS_WORLD);
+		}
 		mMonster->lookAt(Ogre::Vector3(targetX,mMonster->getPosition().y,targetZ), Ogre::Node::TS_WORLD, Ogre::Vector3::NEGATIVE_UNIT_Z);
 		monsterOBB->setPosition(mMonster->getPosition());
 
-		Ogre::Vector3 moveVector;
+		
 		if (monsterOBB->collides(mWorld->tank->playerOBB, moveVector) == true)
 		{
 			s->play("death");

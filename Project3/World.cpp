@@ -78,6 +78,10 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	text = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Battery/Panel/Text1");
 	released = true;
 	restart = false;
+
+	
+	
+	
 }
 
 void 
@@ -87,7 +91,8 @@ World::Think(float time)
 	mOverlay->show();
 	std::string lifes = std::to_string((int)life);
 	std::string final = "Battery: " +  lifes + "%" ;
-
+	obj1->setPosition(mBeam->_getDerivedPosition());
+	obj1->setOrientation(tank->mTank->getOrientation());
 	text->setCaption(final);
 	if (!mMainMenu->getInMenu())
 	{
@@ -138,7 +143,7 @@ World::Think(float time)
 		{
 			light = false;
 		}
-
+		
 		spot->setVisible(light);
 		tank->Think(time, mInputHandler);
 
@@ -166,6 +171,20 @@ void World::restartGame()
 	tank->mTank->setPosition(0,1,0);
 	tank->mTank->attachObject(spot);
 	life = 100;
+
+	beamEntity = SceneManager()->createEntity("Beam.mesh");
+	flashEntity = SceneManager()->createEntity("Flashlight.mesh");
+	mFlashlight = tank->mTank->createChildSceneNode();
+	mFlashlight->attachObject(flashEntity);
+	mFlashlight->setPosition(0, -.5, -0.4);
+	
+	
+	mBeam = tank->mTank->createChildSceneNode();
+	mBeam->attachObject(beamEntity);
+	mBeam->setVisible(false);
+	obj1 = new OBB(beamEntity->getBoundingBox(), mBeam->getPosition(),mBeam->getOrientation());
+	
+
 }
 
 void World::addCollisionObject(OBB *newObject)
