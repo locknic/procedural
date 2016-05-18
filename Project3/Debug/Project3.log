@@ -1,4 +1,4 @@
-﻿Build started 5/18/2016 1:38:22 PM.
+﻿Build started 5/18/2016 2:03:05 PM.
      1>Project "C:\p3test\Grade\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Room.cpp
@@ -64,4 +64,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:16.38
+Time Elapsed 00:00:16.05

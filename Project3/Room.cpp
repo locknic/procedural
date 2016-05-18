@@ -13,6 +13,7 @@
 #include "OgreOverlay.h"
 #include "OgreFontManager.h"
 #include "OgreTextAreaOverlayElement.h"
+#include <stdlib.h>
     
 
 Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position, int roomtype)  : mWorld(world), mSceneManager(sceneManager)
@@ -112,8 +113,27 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 	mWorld->addCollisionObject(obj14);
 	mWorld->addCollisionObject(obj15);
 
+	if (roomtype == 0) {
 
-	getPiano(sceneManager, position);
+		int i = rand() % 3;
+		int j;
+		for (j = 0; j <= i; j++) {
+			int w = rand() % 3;
+			if (w == 0 ) {
+				getPiano(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, - 4 + (rand() % 8)));
+			} else if (w ==1) {
+
+				}
+			else if ( w == 2) {
+			} else {
+
+				}
+		}
+		
+		
+	} else {
+		getLadder(sceneManager, position);
+	}
 	
 }
 void
@@ -127,7 +147,36 @@ void
 	furn->setPosition(position);
 	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
 	obj1->setScale(Ogre::Vector3(.75,.75,.75));
+	
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+			{
+				for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+				{
+					Ogre::Vector3 moveVector;
+
+					if ((*it)->collides(obj1, moveVector) == true)
+					{
+						furn->translate(-moveVector);
+						obj1->setPosition(furn->getPosition());
+					}
+				}
+	}
 	mWorld->addCollisionObject(obj1);
+}
+
+void
+	Room::getLadder(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
+{
+	furnEnt = mSceneManager->createEntity("1.mesh");
+	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	furn->attachObject(furnEnt);
+	furn->scale(1, 1, 1);
+	furn->setPosition(position);
+	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
+	obj1->setScale(Ogre::Vector3(1,1,1));
+	mWorld->ladderOBB = obj1;            
+	mWorld->ladder = furn;
 }
 
 // get desk , chair, bed etc....

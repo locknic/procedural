@@ -50,6 +50,7 @@ public:
 	Ogre::Entity *furnEnt;
 	Ogre::SceneNode *furn;
 	void getPiano(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+	void getLadder(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
 
 protected:
 	Ogre::SceneManager *mSceneManager;

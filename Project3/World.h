@@ -58,6 +58,8 @@ public:
 	bool restart; 
 	OBB  *obj1;
 	bool light;
+	Ogre::SceneNode* ladder;
+	OBB  *ladderOBB;
 private:
 	
 	bool keepGoing;
@@ -72,6 +74,7 @@ private:
 
 	Ogre::SceneNode* mBeam;
 	Ogre::SceneNode* mFlashlight;
+	
 	Ogre::Entity *beamEntity;
 	Ogre::Entity *flashEntity;
 	
