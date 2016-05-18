@@ -1,62 +1,12 @@
-﻿Build started 5/18/2016 1:31:08 PM.
+﻿Build started 5/18/2016 1:38:22 PM.
      1>Project "C:\p3test\Grade\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AIManager.cpp Camera.cpp LevelGenerator.cpp MainListener.cpp MainMenu.cpp Monster.cpp Player.cpp Project3.cpp Room.cpp Wall.cpp World.cpp
-         Monster.cpp
-     1>c:\p3test\grade\procedural\project3\monster.cpp(22): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\p3test\grade\procedural\project3\monster.cpp(49): warning C4305: 'argument' : truncation from 'double' to 'const Ogre::Real'
-     1>c:\p3test\grade\procedural\project3\monster.cpp(53): warning C4244: 'argument' : conversion from 'const Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\grade\procedural\project3\monster.cpp(53): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\grade\procedural\project3\monster.cpp(73): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\grade\procedural\project3\monster.cpp(74): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\grade\procedural\project3\monster.cpp(91): warning C4244: 'argument' : conversion from 'const Ogre::Real' to 'int', possible loss of data
-     1>c:\p3test\grade\procedural\project3\monster.cpp(92): warning C4244: 'argument' : conversion from 'const Ogre::Real' to 'int', possible loss of data
-         Generating Code...
-         Compiling...
-         World.cpp
-     1>c:\p3test\grade\procedural\project3\world.cpp(37): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\p3test\grade\procedural\project3\world.cpp(54): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\p3test\grade\procedural\project3\world.cpp(55): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\p3test\grade\procedural\project3\world.cpp(179): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         Wall.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Room.cpp
          Room.cpp
      1>c:\p3test\grade\procedural\project3\room.cpp(20): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
      1>c:\p3test\grade\procedural\project3\room.cpp(21): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
      1>c:\p3test\grade\procedural\project3\room.cpp(22): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
      1>c:\p3test\grade\procedural\project3\room.cpp(23): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
-         Project3.cpp
-         Player.cpp
-     1>c:\p3test\grade\procedural\project3\player.cpp(22): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\p3test\grade\procedural\project3\player.cpp(36): warning C4305: 'argument' : truncation from 'double' to 'const Ogre::Real'
-     1>c:\p3test\grade\procedural\project3\player.cpp(80): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-     1>c:\p3test\grade\procedural\project3\player.cpp(83): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-     1>c:\p3test\grade\procedural\project3\player.cpp(86): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-         MainMenu.cpp
-     1>c:\p3test\grade\procedural\project3\mainmenu.cpp(48): warning C4244: 'argument' : conversion from 'double' to 'const Ogre::Real', possible loss of data
-     1>c:\p3test\grade\procedural\project3\mainmenu.cpp(64): warning C4244: 'argument' : conversion from 'double' to 'const Ogre::Real', possible loss of data
-         MainListener.cpp
-         LevelGenerator.cpp
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(38): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(53): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(68): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(73): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(79): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(79): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(80): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(80): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(83): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(87): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(215): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(219): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(223): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(227): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(231): warning C4244: 'argument' : conversion from 'int' to 'const Ogre::Real', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(237): warning C4244: 'argument' : conversion from 'int' to 'Ogre::Real', possible loss of data
-     1>c:\p3test\grade\procedural\project3\levelgenerator.cpp(237): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         Camera.cpp
-     1>c:\p3test\grade\procedural\project3\camera.cpp(8): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         AIManager.cpp
-         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\p3test\Grade\procedural\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"../SDL2-2.0.3/SDL2-2.0.3/lib/x86/" /LIBPATH:"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/lib/x86" /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib SDL2_mixer.lib SDL2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\p3test\Grade\procedural\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\p3test\Grade\procedural\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
          Debug\Camera.obj
@@ -114,4 +64,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:01:59.94
+Time Elapsed 00:00:16.38

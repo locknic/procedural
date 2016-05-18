@@ -15,7 +15,7 @@
 #include "OgreTextAreaOverlayElement.h"
     
 
-Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position)  : mWorld(world), mSceneManager(sceneManager)
+Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position, int roomtype)  : mWorld(world), mSceneManager(sceneManager)
 {
 	nWall = new Wall(mSceneManager, doors.x, position, Ogre::Radian(0));
 	eWall = new Wall(mSceneManager, doors.y, position, Ogre::Radian(Ogre::Math::PI/2));
@@ -30,7 +30,6 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 
 	leftWall = mSceneManager->createEntity("LeftWall.mesh");
 	lWall = mSceneManager->getRootSceneNode()->createChildSceneNode();
-	//lWall->attachObject(leftWall); 
 	lWall->setVisible(false);
 
 	obj1 = new OBB(leftWall->getBoundingBox(), nWall->wall[0]->getPosition(),nWall->wall[0]->getOrientation());
@@ -113,6 +112,7 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 	mWorld->addCollisionObject(obj14);
 	mWorld->addCollisionObject(obj15);
 
+
 	getPiano(sceneManager, position);
 	
 }
@@ -124,7 +124,7 @@ void
 	furn->attachObject(furnEnt);
 	furn->scale(.75, .75, .75);
 	furn->rotate(Ogre::Vector3::UNIT_X,Ogre::Degree(90),Ogre::Node::TS_WORLD );
-	furn->setPosition(3, 0, 3);
+	furn->setPosition(position);
 	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
 	obj1->setScale(Ogre::Vector3(.75,.75,.75));
 	mWorld->addCollisionObject(obj1);

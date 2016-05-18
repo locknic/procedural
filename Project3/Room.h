@@ -17,7 +17,7 @@ class OBB;
 class Room
 {
 public:
-    Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position);
+    Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, Ogre::Vector3 position, int roomtype);
 
 	Ogre::Entity *floorEnt;
 	Ogre::SceneNode *floor;

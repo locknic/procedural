@@ -228,7 +228,7 @@ void LevelGenerator::generateModels()
 				{
 					down = getArrayValueAt(mRooms, x, z + 1);
 				}
-				new Room(mWorld, mSceneManager, Ogre::Vector4(up, left, down, right), Ogre::Vector3(x * mRoomWidth - ((mRows - 1) / 2 * mRoomWidth), 0, z * mRoomWidth - ((mColumns - 1) / 2 * mRoomWidth)));
+				new Room(mWorld, mSceneManager, Ogre::Vector4(up, left, down, right), Ogre::Vector3(x * mRoomWidth - ((mRows - 1) / 2 * mRoomWidth), 0, z * mRoomWidth - ((mColumns - 1) / 2 * mRoomWidth)), 0);
 			}
 
 			if (getArrayValueAt(mMonsters, x, z))
