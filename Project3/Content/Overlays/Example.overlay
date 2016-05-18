@@ -25,6 +25,33 @@ GameTitle
     }
 }
 
+Battery
+{
+    zorder 200
+	
+    container Panel(Battery/Panel)
+    {
+      metrics_mode relative
+
+      left 0.12
+      top 0.25
+      width 0.1
+      height 0.2
+
+		element TextArea(Battery/Panel/Text1)
+		{
+		metrics_mode relative
+		
+         left 0
+		 top .6
+         font_name BlueHighwayBig
+         char_height 0.10
+         colour 0 1 0.4
+         caption Battery: 1000
+		}
+    }
+}
+
 PlayButton
 {
     zorder 100

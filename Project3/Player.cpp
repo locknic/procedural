@@ -8,7 +8,7 @@
 #include "MainMenu.h"
 Player::Player(World *world) : mWorld(world)
 {
-
+	i = 1 ;
 }
 
 
@@ -22,6 +22,7 @@ Player::restart()
 	mTank->scale(.5,.3,.5);
 	mTank->setVisible(false);
 	playerOBB = new OBB(tankEntity->getBoundingBox(), mTank->getPosition(), mTank->getOrientation());
+	i = 1;
 }
 
 Player::~Player(void)
@@ -73,19 +74,46 @@ Player::Think(float time, InputHandler *mInputHandler)
 
 	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT) || mInputHandler->IsKeyDown(OIS::KC_D))
 	{
+		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
+			mTank->translate(time * (SPEED + 4), 0, 0, Ogre::Node::TS_LOCAL);
+			i++;
+		} else {
+			
 		mTank->translate(time * SPEED, 0, 0, Ogre::Node::TS_LOCAL);
+		}
 	}
 	else if (mInputHandler->IsKeyDown(OIS::KC_LEFT) || mInputHandler->IsKeyDown(OIS::KC_A))
 	{
+		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
+			mTank->translate(-time * (SPEED + 4), 0, 0, Ogre::Node::TS_LOCAL);
+			i++;
+		} else {
+			
 		mTank->translate(-time * SPEED, 0, 0, Ogre::Node::TS_LOCAL);
+		}
 	}
 	if (mInputHandler->IsKeyDown(OIS::KC_UP) || mInputHandler->IsKeyDown(OIS::KC_W))
 	{
-		mTank->translate(0, 0, -time * SPEED, Ogre::Node::TS_LOCAL);
-	}
+		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
+			mTank->translate(0,0, -time * (SPEED+4), Ogre::Node::TS_LOCAL);
+			i = i + 1;
+		} else {
+			mTank->translate(0,0, -time * SPEED, Ogre::Node::TS_LOCAL);
+			 
+		}
+	} 
 	else if (mInputHandler->IsKeyDown(OIS::KC_DOWN) || mInputHandler->IsKeyDown(OIS::KC_S))
 	{
-		mTank->translate(0, 0, time * SPEED, Ogre::Node::TS_LOCAL);
+		i = i - 1;
+		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
+			mTank->translate(0,0, time * (SPEED + 4), Ogre::Node::TS_LOCAL);
+			
+		} else {
+			mTank->translate(0,0, time * SPEED, Ogre::Node::TS_LOCAL);
+			
+		}
+	} else {
+		i = i-1;
 	}
 
 	

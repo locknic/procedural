@@ -8,6 +8,8 @@ namespace Ogre {
     class SceneManager;
 	class Entity;
 	class Light;
+	class Overlay;
+	class TextAreaOverlayElement;
 }
 
 // Forward delcarations of our own classes
@@ -55,11 +57,13 @@ public:
 private:
 	
 	bool keepGoing;
-
+	bool light;
+	int k;
+	int i;
+	int life;
+	Ogre::Overlay *mOverlay;
+	Ogre::TextAreaOverlayElement *text;
 	Ogre::Light *spot;
-	//SoundBank *s;
-	
-
 };
 
 #endif

@@ -8,6 +8,9 @@ namespace Ogre
 
 class World;
 class InputHandler;
+class Sound;
+class SoundChunk;
+class SoundBank;
 
 class MainMenu 
 {
@@ -22,7 +25,7 @@ public:
 	void release();
 	bool getInMenu() { return inMenu; }
 
-private:
+public:
 	World *mWorld;
 	InputHandler *mInputHandler;
 
@@ -33,11 +36,10 @@ private:
 	double cameraY;
 
 	int optionSelected;
-
+	SoundBank *s;
 	Ogre::Overlay *mOverlay;
 	Ogre::Overlay *mRestartButtonOverlay;
 	Ogre::Overlay *mPlayButtonOverlay;
 	Ogre::Overlay *mExitButtonOverlay;
 };
-
 #endif

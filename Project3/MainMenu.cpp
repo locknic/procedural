@@ -8,6 +8,7 @@
 #include "World.h"
 #include "InputHandler.h"
 #include "Camera.h"
+#include "Sound.h"
 
 MainMenu::MainMenu(World *world, InputHandler *input) : mWorld(world), mInputHandler(input)
 {
@@ -31,6 +32,11 @@ MainMenu::MainMenu(World *world, InputHandler *input) : mWorld(world), mInputHan
 	transitionIn = 0;
 	transitionOut = 0;
 	cameraY = 0;
+
+	s = new SoundBank();
+	s->setup();
+	s->openFile("bell.ogg", "b", 0);
+
 }
 
 void MainMenu::Think(float time)
@@ -75,10 +81,12 @@ void MainMenu::Think(float time)
 				released = false;
 				if (mInputHandler->IsKeyDown(OIS::KC_DOWN))
 				{
+					s->play("b");
 					changeOption(1);
 				}
 				else if (mInputHandler->IsKeyDown(OIS::KC_UP))
 				{
+					s->play("b");
 					changeOption(-1);
 				}
 				else if (mInputHandler->IsKeyDown(OIS::KC_RETURN))

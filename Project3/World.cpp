@@ -59,6 +59,9 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	s->setup();
 	s->openFile("ExtremeHorror.wav", "monster", 0);
 	s->fadeIn("monster", 0, true);
+	s->openFile("Heart.wav", "heart", 0);
+	s->fadeIn("heart", 0, true);
+	
 	s->setEnableSound(true);
 	mLevelGenerator = new LevelGenerator(this, mSceneManager);
 	tank = new Player(this);
@@ -66,38 +69,59 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	mMainMenu = new MainMenu(this, mInputHandler);
 	mMainMenu->displayMenu();
 	keepGoing = true;
-	
+	light = true;
+	k = 20;
+	i = 0;
+	life = 1000;
+	Ogre::OverlayManager& om = Ogre::OverlayManager::getSingleton();
+	mOverlay = om.getByName("Battery");
+	text = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Battery/Panel/Text1");
 }
 
 void 
 World::Think(float time)
 {
 	mMainMenu->Think(time);
+	mOverlay->show();
+	std::string lifes = std::to_string(life);
+	std::string final = "Battery: " +  lifes ;
 
+	text->setCaption(final);
 	if (!mMainMenu->getInMenu())
 	{
 		mLevelGenerator->Think(time);
+		if (mInputHandler->IsKeyDown(OIS::KC_L) && i + 20 < k) {
+			i = k;
+			if (light == false) {
+				if (life > 0) {
+				light = true;
+				} else {
+					light = false;
+				}
+			} else {
+				light = false;
+			}
+			
+		}
+		k++;
+		if (light == false && life < 1000 ) {
+			if (life > 1000) {
+				life = 1000;
+			} else {
+				life++;
+			}
+		} else if (light == true) {
+			if (life > 0) {
+			life--;
+			} else {
+				life = 0;
+			}
+		}
+		if (life <= 0) {
+			light = false;
+		}
 
-		//if (mInputHandler->IsKeyDown(OIS::KC_RIGHT))
-		//{
-		//	//flashLight->yaw(Ogre::Radian(-time * 1));
-		//	flashLight->translate(-time * 5, 0, 0, Ogre::Node::TS_LOCAL);
-		//}
-
-		//if (mInputHandler->IsKeyDown(OIS::KC_LEFT))
-		//{
-		//	//flashLight->yaw(Ogre::Radian(time * 1));
-		//	flashLight->translate(time * 5, 0, 0, Ogre::Node::TS_LOCAL);
-		//}
-
-		//if (mInputHandler->IsKeyDown(OIS::KC_UP))
-		//{
-		//	flashLight->translate(0,0,-time * 5, Ogre::Node::TS_LOCAL);
-		//}
-		//if (mInputHandler->IsKeyDown(OIS::KC_DOWN))
-		//{
-		//	flashLight->translate(0,0,time * 5, Ogre::Node::TS_LOCAL);
-		//}
+		spot->setVisible(light);
 		tank->Think(time, mInputHandler);
 
 		mCamera->setPositionFromGhostPosition(tank->mTank->getOrientation(), tank->mTank->getPosition());
@@ -110,8 +134,6 @@ void World::restartGame()
 	mSceneManager->getRootSceneNode()->removeAndDestroyAllChildren();
 
 	mLevelGenerator->generateLevel(9,9,10,1);
-
-	//tank->mTank = SceneManager()->getRootSceneNode()->createChildSceneNode();
 	tank->restart();
 	tank->mTank->setPosition(0,1,0);
 	tank->mTank->attachObject(spot);
