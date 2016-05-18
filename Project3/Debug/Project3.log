@@ -1,32 +1,7 @@
-<<<<<<< HEAD
-﻿Build started 5/18/2016 3:14:45 PM.
-     1>Project "C:\Users\dmortlock\Downloads\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AIManager.cpp Camera.cpp LevelGenerator.cpp MainListener.cpp MainMenu.cpp Monster.cpp Player.cpp Project3.cpp Room.cpp Wall.cpp World.cpp
-         World.cpp
-     1>c:\users\dmortlock\downloads\procedural\project3\world.cpp(37): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\dmortlock\downloads\procedural\project3\world.cpp(54): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\users\dmortlock\downloads\procedural\project3\world.cpp(55): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-     1>c:\users\dmortlock\downloads\procedural\project3\world.cpp(193): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
-         Generating Code...
-         Compiling...
-         Project3.cpp
-         MainListener.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         Wall.cpp
-         Room.cpp
-         Player.cpp
-         Monster.cpp
-         MainMenu.cpp
-         LevelGenerator.cpp
-         Camera.cpp
-         AIManager.cpp
-=======
-﻿Build started 5/18/2016 3:00:25 PM.
+﻿Build started 5/18/2016 3:29:16 PM.
      1>Project "C:\p3test\Grade\procedural\Project3\Project3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt LevelGenerator.cpp Room.cpp World.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"../SDL2-2.0.3/SDL2-2.0.3/include" /I"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/include" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE/Overlay" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OIS" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include/OGRE" /I"C:\OgreSDK\OgreSDK_vc11_v1-9-0/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Room.cpp
          Room.cpp
      1>c:\p3test\grade\procedural\project3\room.cpp(21): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
      1>c:\p3test\grade\procedural\project3\room.cpp(22): warning C4244: 'argument' : conversion from 'Ogre::Real' to 'int', possible loss of data
@@ -38,11 +13,6 @@
      1>c:\p3test\grade\procedural\project3\room.cpp(240): warning C4305: 'argument' : truncation from 'double' to 'const Ogre::Real'
      1>c:\p3test\grade\procedural\project3\room.cpp(324): warning C4305: 'argument' : truncation from 'double' to 'Ogre::Real'
      1>c:\p3test\grade\procedural\project3\room.cpp(328): warning C4305: 'argument' : truncation from 'double' to 'const Ogre::Real'
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         World.cpp
-         LevelGenerator.cpp
->>>>>>> fd6b5d21638daa9debca0fb4364b5cfdd806888a
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\p3test\Grade\procedural\Debug\Project3.exe" /INCREMENTAL /NOLOGO /LIBPATH:"../SDL2-2.0.3/SDL2-2.0.3/lib/x86/" /LIBPATH:"../SDL2_mixer-2.0.0/SDL2_mixer-2.0.0/lib/x86" /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/boost/lib" /LIBPATH:"C:\OgreSDK\OgreSDK_vc11_v1-9-0/lib/Debug" OIS_d.lib OgreMain_d.lib OgreOverlay_d.lib SDL2_mixer.lib SDL2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\p3test\Grade\procedural\Debug\Project3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\p3test\Grade\procedural\Debug\Project3.lib" /MACHINE:X86 Debug\AIManager.obj
          Debug\Camera.obj
@@ -100,8 +70,4 @@
 
 Build succeeded.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:46.60
-=======
-Time Elapsed 00:00:16.29
->>>>>>> fd6b5d21638daa9debca0fb4364b5cfdd806888a
+Time Elapsed 00:00:16.34

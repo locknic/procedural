@@ -52,6 +52,7 @@ Player::Think(float time, InputHandler *mInputHandler)
 			
 		}
 	}
+
 	Ogre::Vector3 moveVector;
 	if(mWorld->ladderOBB->collides(playerOBB, moveVector) == true)
 	{

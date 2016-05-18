@@ -176,13 +176,13 @@ void
 void
 	Room::getLadder(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
 {
-	furnEnt = mSceneManager->createEntity("1.mesh");
+	furnEnt = mSceneManager->createEntity("Ladder.mesh");
 	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
 	furn->attachObject(furnEnt);
-	furn->scale(1, 1, 1);
+	furn->scale(5, 5, 5);
 	furn->setPosition(position);
 	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
-	obj1->setScale(Ogre::Vector3(1,1,1));
+	obj1->setScale(Ogre::Vector3(5,5,5));
 	mWorld->ladderOBB = obj1;            
 	mWorld->ladder = furn;
 }
@@ -190,10 +190,10 @@ void
 void
 	Room::getLadder2(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
 {
-	furnEnt = mSceneManager->createEntity("1.mesh");
+	furnEnt = mSceneManager->createEntity("Ladder.mesh");
 	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
 	furn->attachObject(furnEnt);
-	furn->scale(1, 1, 1);
+	furn->scale(5, 5, 5);
 	furn->setPosition(position);
 	
 }

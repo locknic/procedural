@@ -81,6 +81,7 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	text2 = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Level/Panel/Text1");
 	released = true;
 	restart = false;
+	nextLevel = false;
 
 }
 
