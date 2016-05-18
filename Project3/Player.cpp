@@ -54,7 +54,22 @@ Player::Think(float time, InputHandler *mInputHandler)
 	}
 
 	const float RADIANS_PER_SECOND = 1;
-	const float SPEED = 7;
+	float SPEED = 3;
+	if (mInputHandler->IsKeyDown(OIS::KC_SPACE)) 
+	{
+		if (i > 0)
+		{
+			i -= 3 * time;
+			SPEED = 10;
+		}
+	}
+	else
+	{
+		if (i < 3)
+		{
+			i += time;
+		}
+	}
 
 	mInputHandler->mMouse->capture();
 
@@ -74,48 +89,20 @@ Player::Think(float time, InputHandler *mInputHandler)
 
 	if (mInputHandler->IsKeyDown(OIS::KC_RIGHT) || mInputHandler->IsKeyDown(OIS::KC_D))
 	{
-		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
-			mTank->translate(time * (SPEED + 4), 0, 0, Ogre::Node::TS_LOCAL);
-			i++;
-		} else {
-			
 		mTank->translate(time * SPEED, 0, 0, Ogre::Node::TS_LOCAL);
-		}
 	}
 	else if (mInputHandler->IsKeyDown(OIS::KC_LEFT) || mInputHandler->IsKeyDown(OIS::KC_A))
 	{
-		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
-			mTank->translate(-time * (SPEED + 4), 0, 0, Ogre::Node::TS_LOCAL);
-			i++;
-		} else {
-			
 		mTank->translate(-time * SPEED, 0, 0, Ogre::Node::TS_LOCAL);
-		}
 	}
 	if (mInputHandler->IsKeyDown(OIS::KC_UP) || mInputHandler->IsKeyDown(OIS::KC_W))
 	{
-		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
-			mTank->translate(0,0, -time * (SPEED+4), Ogre::Node::TS_LOCAL);
-			i = i + 1;
-		} else {
-			mTank->translate(0,0, -time * SPEED, Ogre::Node::TS_LOCAL);
-			 
-		}
+		mTank->translate(0,0, -time * SPEED, Ogre::Node::TS_LOCAL);
 	} 
 	else if (mInputHandler->IsKeyDown(OIS::KC_DOWN) || mInputHandler->IsKeyDown(OIS::KC_S))
 	{
-		i = i - 1;
-		if (mInputHandler->IsKeyDown(OIS::KC_SPACE) && i < 600) {
-			mTank->translate(0,0, time * (SPEED + 4), Ogre::Node::TS_LOCAL);
-			
-		} else {
-			mTank->translate(0,0, time * SPEED, Ogre::Node::TS_LOCAL);
-			
-		}
-	} else {
-		i = i-1;
+		mTank->translate(0,0, time * SPEED, Ogre::Node::TS_LOCAL);
 	}
-
 	
 
 

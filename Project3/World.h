@@ -58,9 +58,10 @@ private:
 	
 	bool keepGoing;
 	bool light;
+	bool released;
 	int k;
 	int i;
-	int life;
+	float life;
 	Ogre::Overlay *mOverlay;
 	Ogre::TextAreaOverlayElement *text;
 	Ogre::Light *spot;

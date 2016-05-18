@@ -24,7 +24,7 @@ private:
 
 	World *mWorld;
 	
-	int i;
+	float i;
 	Ogre::SceneManager *mSceneManager;
 	Ogre::Real mRotate;
 	Ogre::Real mMove;
