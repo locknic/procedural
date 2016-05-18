@@ -52,6 +52,11 @@ Player::Think(float time, InputHandler *mInputHandler)
 			
 		}
 	}
+	Ogre::Vector3 moveVector;
+	if(mWorld->ladderOBB->collides(playerOBB, moveVector) == true)
+	{
+		mWorld->nextLevel = true;
+	}
 
 	const float RADIANS_PER_SECOND = 1;
 	float SPEED = 3;

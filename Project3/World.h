@@ -56,10 +56,12 @@ public:
 	std::vector<OBB*> *mStaticCollisions;
 	
 	bool restart; 
+	bool nextLevel;
 	OBB  *obj1;
 	bool light;
 	Ogre::SceneNode* ladder;
 	OBB  *ladderOBB;
+	int level;
 private:
 	
 	bool keepGoing;
@@ -69,7 +71,9 @@ private:
 	int i;
 	float life;
 	Ogre::Overlay *mOverlay;
+	Ogre::Overlay *mOverlay2;
 	Ogre::TextAreaOverlayElement *text;
+	Ogre::TextAreaOverlayElement *text2;
 	Ogre::Light *spot;
 
 	Ogre::SceneNode* mBeam;

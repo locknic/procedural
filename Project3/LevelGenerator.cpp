@@ -168,16 +168,16 @@ void LevelGenerator::generateMonsters()
 {
 	for (int x = 0; x < mMonsterNumbers; x++)
 	{
-		int roomX = (mRows - 1) / 2;
-		int roomY = (mColumns - 1) / 2;
+		int roomX = (int)(mRows / 2);
+		int roomY = (int)(mColumns / 2);
 		while (roomX == (int)(mRows / 2) && roomY == (int)(mColumns / 2))
 		{
 			roomX = rand() % (mRows - 1);
 			roomY = rand() % (mColumns - 1);
 			if (!getArrayValueAt(mRooms, roomX, roomY))
 			{
-				roomX = (mRows - 1) / 2;
-				roomY = (mColumns - 1) / 2;
+				roomX = (int)(mRows / 2);
+				roomY = (int)(mColumns / 2);
 			}
 		}
 		setArrayValueAt(mMonsters, 1, roomX, roomY);
@@ -203,6 +203,19 @@ void LevelGenerator::generateModels()
 	roofNode->setPosition(0, 2.5, 0);
 	roofEntity->setMaterialName("SouthWall");
 
+	int roomX = (int)(mRows / 2);
+	int roomY = (int)(mColumns / 2);
+	while (roomX == (int)(mRows / 2) && roomY == (int)(mColumns / 2))
+	{
+		roomX = rand() % (mRows - 1);
+		roomY = rand() % (mColumns - 1);
+		if (!getArrayValueAt(mRooms, roomX, roomY))
+		{
+			roomX = (int)(mRows / 2);
+			roomY = (int)(mColumns / 2);
+		}
+	}
+		
 	for (int x = 0; x < mRows; x++)
 	{
 		for (int z = 0; z < mColumns; z++)
@@ -228,7 +241,18 @@ void LevelGenerator::generateModels()
 				{
 					down = getArrayValueAt(mRooms, x, z + 1);
 				}
-				new Room(mWorld, mSceneManager, Ogre::Vector4(up, left, down, right), Ogre::Vector3(x * mRoomWidth - ((mRows - 1) / 2 * mRoomWidth), 0, z * mRoomWidth - ((mColumns - 1) / 2 * mRoomWidth)), 0);
+				if (x == mRows / 2 && z == mColumns / 2)
+				{
+					new Room(mWorld, mSceneManager, Ogre::Vector4(up, left, down, right), Ogre::Vector3(x * mRoomWidth - ((mRows - 1) / 2 * mRoomWidth), 0, z * mRoomWidth - ((mColumns - 1) / 2 * mRoomWidth)), 2);
+				}
+				else if (x == roomX && z == roomY)
+				{
+					new Room(mWorld, mSceneManager, Ogre::Vector4(up, left, down, right), Ogre::Vector3(x * mRoomWidth - ((mRows - 1) / 2 * mRoomWidth), 0, z * mRoomWidth - ((mColumns - 1) / 2 * mRoomWidth)), 1);
+				}
+				else
+				{
+					new Room(mWorld, mSceneManager, Ogre::Vector4(up, left, down, right), Ogre::Vector3(x * mRoomWidth - ((mRows - 1) / 2 * mRoomWidth), 0, z * mRoomWidth - ((mColumns - 1) / 2 * mRoomWidth)), 0);
+				}
 			}
 
 			if (getArrayValueAt(mMonsters, x, z))
@@ -239,8 +263,9 @@ void LevelGenerator::generateModels()
 			}
 		}
 	}
+	
 
-
+		
 }
 
 int LevelGenerator::findArrayPosition(int currentRow, int currentColumn)

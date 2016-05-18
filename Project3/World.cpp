@@ -65,6 +65,7 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	s->setEnableSound(true);
 	mLevelGenerator = new LevelGenerator(this, mSceneManager);
 	tank = new Player(this);
+	level = 1;
 	restartGame();
 	mMainMenu = new MainMenu(this, mInputHandler);
 	mMainMenu->displayMenu();
@@ -76,12 +77,11 @@ World::World(Ogre::SceneManager *sceneManager, InputHandler *input)   : mSceneMa
 	Ogre::OverlayManager& om = Ogre::OverlayManager::getSingleton();
 	mOverlay = om.getByName("Battery");
 	text = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Battery/Panel/Text1");
+	mOverlay2 = om.getByName("Level");
+	text2 = (Ogre::TextAreaOverlayElement *) om.getOverlayElement("Level/Panel/Text1");
 	released = true;
 	restart = false;
 
-	
-	
-	
 }
 
 void 
@@ -89,11 +89,18 @@ World::Think(float time)
 {
 	mMainMenu->Think(time);
 	mOverlay->show();
+	mOverlay2->show();
+
 	std::string lifes = std::to_string((int)life);
 	std::string final = "Battery: " +  lifes + "%" ;
 	obj1->setPosition(mBeam->_getDerivedPosition());
 	obj1->setOrientation(tank->mTank->getOrientation());
 	text->setCaption(final);
+
+	std::string levels = std::to_string((int)level);
+	std::string finals = "Level: " +  levels;
+	text2->setCaption(finals);
+
 	if (!mMainMenu->getInMenu())
 	{
 		if (mInputHandler->IsKeyDown(OIS::KC_F)) 
@@ -155,8 +162,15 @@ World::Think(float time)
 		{
 			restart = false;
 			restartGame();
+			level = 1;
 			mMainMenu->displayMenu();
 			mMainMenu->killPlayer();
+		}
+		if(nextLevel)
+		{
+			nextLevel = false;
+			level += 1;
+			restartGame();
 		}
 	}
 }
@@ -167,7 +181,7 @@ void World::restartGame()
 	mSceneManager->getRootSceneNode()->removeAndDestroyAllChildren();
 	mStaticCollisions->clear();
 
-	mLevelGenerator->generateLevel(9,9,10,1);
+	mLevelGenerator->generateLevel(9 + level * 2,9 + level * 2,10,level);
 	tank->restart();
 	tank->mTank->setPosition(0,1,0);
 	tank->mTank->attachObject(spot);
