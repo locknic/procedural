@@ -51,6 +51,13 @@ public:
 	Ogre::SceneNode *furn;
 	void getPiano(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
 	void getLadder(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+	void getLadder2(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+	void getChest(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+	void getChair(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+	void getBed(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+	void getBarrel(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+	void getBench(Ogre::SceneManager *sceneManager, Ogre::Vector3 position);
+
 
 protected:
 	Ogre::SceneManager *mSceneManager;

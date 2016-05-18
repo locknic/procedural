@@ -115,24 +115,32 @@ Room::Room(World *world, Ogre::SceneManager *sceneManager, Ogre::Vector4 doors, 
 
 	if (roomtype == 0) {
 
-		int i = rand() % 3;
+		int i = rand() % 2;
 		int j;
 		for (j = 0; j <= i; j++) {
-			int w = rand() % 3;
+			int w = rand() % 5;
 			if (w == 0 ) {
-				getPiano(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, - 4 + (rand() % 8)));
+				getPiano(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, position.z - 4 + (rand() % 8)));
 			} else if (w ==1) {
-
+				getChest(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, position.z - 4 + (rand() % 8)));
 				}
 			else if ( w == 2) {
-			} else {
-
-				}
+				getChair(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, position.z - 4 + (rand() % 8)));
+			} else if (w == 3) {
+				getBed(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, position.z - 4 + (rand() % 8)));
+				} else if (w == 4) {
+					getBench(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, position.z - 4 + (rand() % 8)));
+			}
+				else {
+				getBarrel(sceneManager, Ogre::Vector3(position.x - 4 + (rand() % 8), position.y, position.z - 4 + (rand() % 8)));
+			}
 		}
 		
 		
-	} else {
+	} else if (roomtype == 1) {
 		getLadder(sceneManager, position);
+	} else {
+		getLadder2(sceneManager, Ogre::Vector3(position.x, position.y -2, position.z));
 	}
 	
 }
@@ -177,6 +185,163 @@ void
 	obj1->setScale(Ogre::Vector3(1,1,1));
 	mWorld->ladderOBB = obj1;            
 	mWorld->ladder = furn;
+}
+
+void
+	Room::getLadder2(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
+{
+	furnEnt = mSceneManager->createEntity("1.mesh");
+	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	furn->attachObject(furnEnt);
+	furn->scale(1, 1, 1);
+	furn->setPosition(position);
+	
+}
+
+void
+Room::getChest(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
+{
+	furnEnt = mSceneManager->createEntity("chest1_Cube.mesh");
+	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	furn->attachObject(furnEnt);
+	furn->scale(.2, .2, .2);
+	furn->rotate(Ogre::Vector3::UNIT_X,Ogre::Degree(90),Ogre::Node::TS_WORLD );
+	furn->setPosition(position);
+	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
+	obj1->setScale(Ogre::Vector3(.2,.2,.2));
+	
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+			{
+				for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+				{
+					Ogre::Vector3 moveVector;
+
+					if ((*it)->collides(obj1, moveVector) == true)
+					{
+						furn->translate(-moveVector);
+						obj1->setPosition(furn->getPosition());
+					}
+				}
+	}
+	mWorld->addCollisionObject(obj1);
+}
+
+void
+Room::getChair(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
+{
+	furnEnt = mSceneManager->createEntity("chair_chesterfield.mesh");
+	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	furn->attachObject(furnEnt);
+	furn->scale(.7, .7, .7);
+	furn->rotate(Ogre::Vector3::UNIT_X,Ogre::Degree(90),Ogre::Node::TS_WORLD );
+	furn->setPosition(position);
+	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
+	obj1->setScale(Ogre::Vector3(.7,.7,.7));
+	
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+			{
+				for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+				{
+					Ogre::Vector3 moveVector;
+
+					if ((*it)->collides(obj1, moveVector) == true)
+					{
+						furn->translate(-moveVector);
+						obj1->setPosition(furn->getPosition());
+					}
+				}
+	}
+	mWorld->addCollisionObject(obj1);
+}
+
+void
+Room::getBed(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
+{
+	furnEnt = mSceneManager->createEntity("MetalWhite.mesh");
+	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	furn->attachObject(furnEnt);
+	furn->scale(.25, .25, .25);
+	furn->rotate(Ogre::Vector3::UNIT_X,Ogre::Degree(90),Ogre::Node::TS_WORLD );
+	furn->setPosition(position);
+	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
+	obj1->setScale(Ogre::Vector3(.25,.25,.25));
+	
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+			{
+				for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+				{
+					Ogre::Vector3 moveVector;
+
+					if ((*it)->collides(obj1, moveVector) == true)
+					{
+						furn->translate(-moveVector);
+						obj1->setPosition(furn->getPosition());
+					}
+				}
+	}
+	mWorld->addCollisionObject(obj1);
+}
+
+void
+Room::getBarrel(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
+{
+	furnEnt = mSceneManager->createEntity("obj0.mesh");
+	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	furn->attachObject(furnEnt);
+	furn->scale(1, 1, 1);
+	
+	furn->setPosition(position);
+	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
+	obj1->setScale(Ogre::Vector3(1,1,1));
+	
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+			{
+				for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+				{
+					Ogre::Vector3 moveVector;
+
+					if ((*it)->collides(obj1, moveVector) == true)
+					{
+						furn->translate(-moveVector);
+						obj1->setPosition(furn->getPosition());
+					}
+				}
+	}
+	mWorld->addCollisionObject(obj1);
+}
+
+
+void
+Room::getBench(Ogre::SceneManager *sceneManager, Ogre::Vector3 position)
+{
+	furnEnt = mSceneManager->createEntity("Bench.mesh");
+	furn = mSceneManager->getRootSceneNode()->createChildSceneNode();
+	furn->attachObject(furnEnt);
+	furn->scale(.005, .005, .005);
+	furn->rotate(Ogre::Vector3::UNIT_X,Ogre::Degree(90),Ogre::Node::TS_WORLD );
+	furn->setPosition(position);
+	obj1 = new OBB(furnEnt->getBoundingBox(), furn->getPosition(), furn->getOrientation());
+	obj1->setScale(Ogre::Vector3(.005,.005,.005));
+	
+
+	if (mWorld->mStaticCollisions->begin() != mWorld->mStaticCollisions->end())
+			{
+				for(std::vector<OBB*>::iterator it = mWorld->mStaticCollisions->begin(); it != mWorld->mStaticCollisions->end(); ++it) 
+				{
+					Ogre::Vector3 moveVector;
+
+					if ((*it)->collides(obj1, moveVector) == true)
+					{
+						furn->translate(-moveVector);
+						obj1->setPosition(furn->getPosition());
+					}
+				}
+	}
+	mWorld->addCollisionObject(obj1);
 }
 
 // get desk , chair, bed etc....
